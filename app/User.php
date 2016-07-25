@@ -17,10 +17,31 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword;
 
     protected $guarded  = array('id');
+    
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * The events created by this user
+     *
+     * @return Eloquent\Relationship
+     */
+    public function events() {
+
+        return $this->hasMany('App\Event', 'creator_id');
+    }
+
+    /**
+     * The photos created by this user
+     *
+     * @return Eloquent\Relationship
+     */
+    public function photos() {
+
+        return $this->hasManyThrough('App\Photo', 'App\Event', 'creator_id', 'event_id');
+    }
 }

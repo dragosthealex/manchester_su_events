@@ -15,14 +15,13 @@
               content=""/>
     @show
 
-		<link href="{{ asset('css/site.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <link href="{{ asset('css/grayscale.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/global.css') }}" rel="stylesheet">
 
         <script src="{{ asset('js/site.js') }}"></script>
         <script src="https://maps.googleapis.com/maps/api/js"
             async defer></script>
-
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +35,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 @include('partials.nav')
 
-<div class="container">
 @yield('content')
-</div>
 @include('partials.footer')
 
 <!-- Scripts -->

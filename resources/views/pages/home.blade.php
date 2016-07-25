@@ -1,78 +1,36 @@
-@extends('layouts.app')
+@extends('layouts.home')
 @section('title') Home :: @parent @endsection
 @section('content')
-<div class="row">
-    <div class="page-header">
-        <h2>Home Page</h2>
-    </div></div>
 
-    @if(count($articles)>0)
-        <div class="row">
-            <h2>News</h2>
-            @foreach ($articles as $post)
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h4>
-                                <strong><a href="{{url('article/'.$post->slug.'')}}">{{
-                                        $post->title }}</a></strong>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="{{url('news/'.$post->slug.'')}}" class="thumbnail"><img
-                                        src="http://placehold.it/260x180" alt=""></a>
-                        </div>
-                        <div class="col-md-10">
-                            <p>{!! $post->introduction !!}</p>
-
-                            <p>
-                                <a class="btn btn-mini btn-default"
-                                   href="{{url('news/'.$post->slug.'')}}">Read more</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p></p>
-
-                            <p>
-                                <span class="glyphicon glyphicon-user"></span> by <span
-                                        class="muted">{{ $post->author->name }}</span> | <span
-                                        class="glyphicon glyphicon-calendar"></span> {{ $post->created_at }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    @endif
-
-    @if(count($photoAlbums)>0)
-        <div class="row">
-            <h2>Photos</h2>
-            @foreach($photoAlbums as $item)
-                <div class="col-sm-3">
-                    <div class="row">
-                        <a href="{{url('photo/'.$item->id.'')}}"
-                           class="hover-effect">
-                            @if($item->album_image!="")
-                                <img class="col-sm-12"
-                                        src="{!! url('appfiles/photoalbum/'.$item->folder_id.'/'.$item->album_image) !!}">
-                            @elseif($item->album_image_first!="")
-                                <img class="col-sm-12"
-                                     src="{!! url('appfiles/photoalbum/'.$item->folder_id.'/'.$item->album_image_first) !!}">
-                            @else
-                                <img class="col-sm-12" src="{!! url('appfiles/photoalbum/no_photo.png') !!}">
-                            @endif
+    <!-- Intro Header -->
+     <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Grayscale</h1>
+                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
+                            <br>Created by Start Bootstrap.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
                         </a>
-                        <div class=" col-sm-12">{{$item->name}}</div>
                     </div>
                 </div>
-            @endforeach
+            </div>
         </div>
-    @endif
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center scrollable-section" data-section-title="About Us">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Us</h2>
+                <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p>m dolor sit amet, consectetur adipiscing elit. Aliquam risus ipsum, tristique et convallis nec, ornare eget nibh. Nullam posuere li</p>
+                <p>r consequat varius. Duis dignissim facilisis turpis et tincidunt. Nullam eu urna id orci euismod aliquam eget ac ligula. Maecenas cursus urna</p>
+            </div>
+        </div>
+    </section>
 
 @endsection
 
