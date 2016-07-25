@@ -36,7 +36,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 @include('partials.nav')
 
-<div class="container">
+<div class="container main-content">
 @yield('content')
 </div>
 @include('partials.footer')
@@ -45,6 +45,8 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="{{ asset('lib/section-scroll/jquery.section-scroll.js') }}"></script>
 <script src="{{ asset('js/grayscale.min.js') }}"></script>
+<script src="{{ asset('js/nicescroll.js') }}"></script>
+<script src="{{ asset('js/parallax.min.js') }}"></script>
 @yield('scripts')
 <script src="{{ asset('js/global.js') }}"></script>
 
