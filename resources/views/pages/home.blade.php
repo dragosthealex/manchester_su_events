@@ -33,6 +33,9 @@ header.intro {
   letter-spacing: 4px;
   font-size: 30px;
 }
+.featured-carousel .carousel-indicators {
+  bottom: -50px;
+}
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 60px;
@@ -68,18 +71,27 @@ header.intro {
   </div>
 </header>
 <!-- Featured Events Section -->
-<section id="featured" class="container content-section text-center scrollable-section">
+<section id="featured" class="container-fluid content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">Featured</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      @include('partials.featured_carousel')
+    </div>
+  </div>
 </section>
 <!-- All Events Section -->
-<section id="events" class="container content-section text-center scrollable-section">
+<section id="events" class="container-fluid content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">All Events</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span-12">
     </div>
   </div>
 </section>
@@ -99,6 +111,7 @@ $(document).ready(function() {
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
+    $('.carousel.slide').carousel();
   }
 
   init();
@@ -109,7 +122,7 @@ $(document).ready(function() {
   
   $(window).bind('scroll', function(e){
     var scrolledY = $(window).scrollTop();
-    $('.vegas-slide-inner').css('top','+' + ((scrolledY / 1.3)) + 'px');
+    $('.vegas-slide-inner').css('top','+' + ((scrolledY / 1.8)) + 'px');
   });
 });
 </script>

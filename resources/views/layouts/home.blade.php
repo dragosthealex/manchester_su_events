@@ -45,7 +45,7 @@
 <script src="{{ asset('js/grayscale.min.js') }}"></script>
 <script src="{{ asset('lib/vegas/vegas.min.js') }}"></script>
 <script src="{{ asset('js/nicescroll.js') }}"></script>
-<script src="{{ asset('js/parallax.min.js') }}"></script>
+<script src="{{ asset('js/mixitup.min.js') }}"></script>
 @yield('scripts')
 <script src="{{ asset('js/global.js') }}"></script>
 </body>
