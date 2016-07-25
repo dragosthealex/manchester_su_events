@@ -17,10 +17,10 @@
           <a href="#page-top"></a>
         </li>
         <li>
-          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
+          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#featured">Featured</a>
         </li>
         <li>
-          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#contact">Contact Us</a>
+          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
         </li>
         @if (Auth::guest())
           <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ url('auth/login') }}"><i

@@ -11,7 +11,7 @@ header.intro {
   display: table;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.50);
 }
 .vegas-slide-inner {
   height: 100%;
@@ -22,12 +22,16 @@ header.intro {
   font-size: 100px;
   text-shadow: 0 5px 10px #710671;
   font-family: outrun_future;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   transition: 0.6s;
 }
 .intro .intro-body .intro-text {
-  font-family: 'baumans';
-  color: #ffff86;
+  /*font-family: 'baumans';*/
+  /*color: #ffff86;*/
+  font-family: 'snack_patrol';
+  color: #e6e68a;
+  letter-spacing: 4px;
+  font-size: 30px;
 }
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
@@ -55,7 +59,7 @@ header.intro {
           <p class="intro-text">Find out the hottest freshers' events.
             <br>Limited edition
           </p>
-          <a href="#events" class="btn btn-circle page-scroll">
+          <a href="#featured" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
           </a>
         </div>
@@ -63,19 +67,22 @@ header.intro {
     </div>
   </div>
 </header>
-
-<!-- Events Section -->
-<section id="events" class="container content-section text-center scrollable-section">
+<!-- Featured Events Section -->
+<section id="featured" class="container content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-      <h2>Events</h2>
-      <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-      <p>m dolor sit amet, consectetur adipiscing elit. Aliquam risus ipsum, tristique et convallis nec, ornare eget nibh. Nullam posuere li</p>
-      <p>r consequat varius. Duis dignissim facilisis turpis et tincidunt. Nullam eu urna id orci euismod aliquam eget ac ligula. Maecenas cursus urna</p>
+      <h1 class="section-title">Featured</h1>
     </div>
   </div>
 </section>
-
+<!-- All Events Section -->
+<section id="events" class="container content-section text-center scrollable-section">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h1 class="section-title">All Events</h1>
+    </div>
+  </div>
+</section>
 @endsection
 
 @section('scripts')

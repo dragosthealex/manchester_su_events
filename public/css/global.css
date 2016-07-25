@@ -1,18 +1,26 @@
+/* fonts */
 @font-face {
-    font-family: 'outrun_future';
-    src: url('../fonts/future-webfont.woff2') format('woff2'),
-         url('../fonts/future-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'outrun_future';
+  src: url('../fonts/future-webfont.woff2') format('woff2'),
+       url('../fonts/future-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'baumans';
-    src: url('../fonts/baumans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/baumans-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'snack_patrol';
+  src: url('../fonts/snack_patrol.woff2') format('woff2'),
+       url('../fonts/snack_patrol.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+  font-family: 'baumans';
+  src: url('../fonts/baumans-regular-webfont.woff2') format('woff2'),
+       url('../fonts/baumans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* global stuff */
 html {
   background-color: #efefef;
 }
@@ -20,13 +28,25 @@ body {
   color: #333;
 }
 
+/* content */
 .main-content {
   margin-top: 100px;
 }
 .parallax-window {
   position: absolute;
 }
+section.content-section {
+  padding-top: 70px;
+}
+section.content-section .section-title {
+  font-family: 'snack_patrol';
+  color: rgba(113, 6, 113, 0.8);;
+  font-size: 70px;
+  letter-spacing: 10px;
+}
+/* /content */
 
+/* nav */
 .navbar-custom .nav li a {
   transition: padding 0.3s;
   -moz-transition: padding 0.3s;
@@ -74,6 +94,9 @@ body {
   height: 40px;
 }
 
+/* /nav */
+
+/* footer */
 #footer {
   background-color: #710671;
   padding: 20px 0;
@@ -87,6 +110,9 @@ body {
   color:  #ffff86;
 }
 
+/* /footer */
+
+/* media queries */
 @media(min-width: 768px) {
   section {
     min-height: 100%;
@@ -123,3 +149,4 @@ body {
     background: purple;
   }
 }
+/* /media queries */
