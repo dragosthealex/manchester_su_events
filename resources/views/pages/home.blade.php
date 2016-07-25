@@ -4,13 +4,18 @@
 
 @section('styles')
 <style>
+header.intro {
+  height: 100%;
+}
 .vegas-wrapper {
   display: table;
   width: 100%;
   height: 100%;
-}
-.intro .intro-body {
   background-color: rgba(0, 0, 0, 0.45);
+}
+.vegas-slide-inner {
+  height: 100%;
+  width: 100%;
 }
 .intro .intro-body .brand-heading {
   color: rgb(243, 243, 5);
@@ -18,10 +23,22 @@
   text-shadow: 0 5px 10px #710671;
   font-family: outrun_future;
   margin-bottom: 50px;
+  transition: 0.6s;
 }
 .intro .intro-body .intro-text {
   font-family: 'baumans';
   color: #ffff86;
+}
+@media(max-width: 768px) {
+  .intro .intro-body .brand-heading {
+    font-size: 60px;
+  }
+  .navbar-custom {
+    background: transparent;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 </style>
 @endsection
@@ -51,7 +68,7 @@
 <section id="events" class="container content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-      <h2>About Us</h2>
+      <h2>Events</h2>
       <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
       <p>m dolor sit amet, consectetur adipiscing elit. Aliquam risus ipsum, tristique et convallis nec, ornare eget nibh. Nullam posuere li</p>
       <p>r consequat varius. Duis dignissim facilisis turpis et tincidunt. Nullam eu urna id orci euismod aliquam eget ac ligula. Maecenas cursus urna</p>
@@ -64,17 +81,25 @@
 @section('scripts')
 <script>
 $(document).ready(function() {
-  $("header.intro").vegas({
-    slides: [
-        { src: "{{ asset('img/bg/home1.jpg') }}" },
-        { src: "{{ asset('img/bg/home2.jpg') }}" },
-        { src: "{{ asset('img/bg/home3.jpg') }}" },
-        { src: "{{ asset('img/bg/home4.jpg') }}" },
-        { src: "{{ asset('img/bg/home5.jpg') }}" }
-    ],
-    overlay: "{{ asset('lib/vegas/overlays/06.png') }}"
-  });
+  var init = function() {
+    $("header.intro").vegas({
+      slides: [
+          { src: "{{ asset('img/bg/home1.jpg') }}" },
+          { src: "{{ asset('img/bg/home2.jpg') }}" },
+          { src: "{{ asset('img/bg/home3.jpg') }}" },
+          { src: "{{ asset('img/bg/home4.jpg') }}" },
+          { src: "{{ asset('img/bg/home5.jpg') }}" }
+      ],
+      overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
+    });
+  }
 
+  init();
+
+  $(window).resize(function() {
+    init();
+  });
+  
   $(window).bind('scroll', function(e){
     var scrolledY = $(window).scrollTop();
     $('.vegas-slide-inner').css('top','+' + ((scrolledY / 1.3)) + 'px');
