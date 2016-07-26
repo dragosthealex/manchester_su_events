@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
+use App\Helpers\JsonHelper;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Event;
@@ -18,7 +19,7 @@ class EventController extends Controller
   public function index() {
     
     $events = Event::all();
-    return json_encode(['status'=>'success', 'message'=>'', 'data'=>$events]);
+    return JsonHelper::success($events);
   }
 
   /**
@@ -32,10 +33,10 @@ class EventController extends Controller
     $event = Event::find($id);
 
     if(!$event) {
-      return json_encode(['status'=>'error', 'message'=>'Invalid event.', 'data'=>'']);
+      return JsonHelper::error("Invalid event.");
     }
 
-    return json_encode(['status'=>'success', 'message'=>'', 'data'=>$event]);
+    return JsonHelper::success($event);
   }
 
 }
