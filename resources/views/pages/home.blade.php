@@ -111,6 +111,7 @@ $(document).ready(function() {
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
+    $("header.intro .vegas-wrapper").css("height", $("header.intro").height());
     $('.carousel.slide').carousel();
   }
 
