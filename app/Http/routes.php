@@ -12,9 +12,9 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('event', 'EventController', 
+Route::resource('events', 'EventController', 
                 ['except'   =>  ['create', 'store', 'update', 'destroy']]);
-Route::resource('event', 'EventController', 
+Route::resource('events', 'EventController', 
                           ['middleware'  =>  'EventModeratorMiddleware',
                            'only'        =>  ['create', 'store', 'update', 'destroy']
                           ]);
@@ -30,4 +30,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('user', 'Admin\UserController');
     // Categories
     Route::resource('category', 'Admin\CategoryController');
+});
+
+/***************    Api routes  **********************************/
+Route::group(['prefix' => 'api'], function() {
+  Route::resource('events', 'Api\EventController', 
+                ['except'   =>  ['create', 'store', 'update', 'destroy']]);
 });
