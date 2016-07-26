@@ -17,7 +17,7 @@ class Tag extends Model
     /**
      * Get the event that this photo is posted on.
      *
-     * @return User
+     * @return Eloquent\Relationship
      */
     public function events() {
 

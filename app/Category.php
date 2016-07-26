@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'event_categories';
+
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
@@ -16,7 +23,7 @@ class Category extends Model
     /**
      * Get the events in this category.
      *
-     * @return User
+     * @return Eloquent\Relationship
      */
     public function events() {
 

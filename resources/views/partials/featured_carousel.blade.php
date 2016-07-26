@@ -128,27 +128,72 @@
             <img class="img-responsive card-cover" src="http://placehold.it/1280x720" alt=""/>
             <div class="card-content">
               <div class="card-body">
-                <h2 class="card-title">Lorem Ipsum Event Lorem Ipsum Event Lorem Ipsum Event</h2>
+                <h2 class="card-title"><a href="#">Lorem Ipsum Event</a></h2>
                 <h4 class="card-subtitle">some subtitle</h4>
+                <h4 class="card-date">Friday, 17 September 2016</h4>
                 <p class="card-description">
                   lorewrd asd asd asda s dasdasd asdasdasdas dasdas das dasd asda sa sda sdas dasdasd adsasd
                   dasdddddddddasd as dasda sd asdasdasd asd asd asd asdasdasd asdas asdas asdasdasdasd asd
                 </p>
                 <p class="card-details">
-                  11pm - 23am, $14, academy2
+                  11am - 4pm, $14, academy2
                 </p>
               </div>
+              <hr>
               <div class="card-footer">
-                <a class="card-action" href="#">Tickets</a>
+                <a class="card-action" href="#">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                <a class="card-action" href="#">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xs-4"> <img src="http://placehold.it/260x180" alt=""/>
-          <div class="carousel-caption">This is a caption</div>
+        <div class="col-xs-4">
+          <div class="card has-cover event-card">
+            <img class="img-responsive card-cover" src="http://placehold.it/1280x720" alt=""/>
+            <div class="card-content">
+              <div class="card-body">
+                <h2 class="card-title"><a href="#">Lorem Ipsum Event</a></h2>
+                <h4 class="card-subtitle">some subtitle</h4>
+                <h4 class="card-date">Friday, 17 September 2016</h4>
+                <p class="card-description">
+                  lorewrd asd asd asda s dasdasd asdasdasdas dasdas das dasd asda sa sda sdas dasdasd adsasd
+                  dasdddddddddasd as dasda sd asdasdasd asd asd asd asdasdasd asdas asdas asdasdasdasd asd
+                </p>
+                <p class="card-details">
+                  11am - 4pm, $14, academy2
+                </p>
+              </div>
+              <hr>
+              <div class="card-footer">
+                <a class="card-action" href="#">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                <a class="card-action" href="#">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-xs-4"> <img src="http://placehold.it/260x180" alt=""/>
-          <div class="carousel-caption">This is a caption</div>
+        <div class="col-xs-4">
+          <div class="card has-cover event-card">
+            <img class="img-responsive card-cover" src="http://placehold.it/1280x720" alt=""/>
+            <div class="card-content">
+              <div class="card-body">
+                <h2 class="card-title"><a href="#">Lorem Ipsum Event</a></h2>
+                <h4 class="card-subtitle">some subtitle</h4>
+                <h4 class="card-date">Friday, 17 September 2016</h4>
+                <p class="card-description">
+                  lorewrd asd asd asda s dasdasd asdasdasdas dasdas das dasd asda sa sda sdas dasdasd adsasd
+                  dasdddddddddasd as dasda sd asdasdasd asd asd asd asdasdasd asdas asdas asdasdasdasd asd
+                </p>
+                <p class="card-details">
+                  11am - 4pm, $14, academy2
+                </p>
+              </div>
+              <hr>
+              <div class="card-footer">
+                <a class="card-action" href="#">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                <a class="card-action" href="#">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

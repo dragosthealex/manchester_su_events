@@ -7,7 +7,7 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
 
-		\App\User::create([
+		factory(App\User::class)->create([
 			'name' => 'Admin User',
 			'username' => 'admin_user',
 			'email' => 'admin@admin.com',
@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder {
 			'confirmation_code' => md5(microtime() . env('APP_KEY')),
 		]);
 
-		\App\User::create([
+		factory(App\User::class)->create([
 			'name' => 'Test User',
 			'username' => 'test_user',
 			'email' => 'user@user.com',
@@ -25,7 +25,5 @@ class UserTableSeeder extends Seeder {
 			'confirmed' => 1,
 			'confirmation_code' => md5(microtime() . env('APP_KEY')),
 		]);
-
 	}
-
 }

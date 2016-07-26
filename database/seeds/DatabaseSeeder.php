@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->command->info('Admin User created with username admin@admin.com and password admin');
         $this->command->info('Test User created with username user@user.com and password user');
-
+        $this->call(EventsTableSeeder::class);
+        $this->command->info('Events table seeded with 20 random events');
+        
         Model::reguard();
     }
 }

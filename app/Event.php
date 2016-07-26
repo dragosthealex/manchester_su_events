@@ -10,6 +10,18 @@ class Event extends Model
 
     use SoftDeletes;
 
+    /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'events';
+
+    /**
+     * Date of soft deletion
+     *
+     * @var string
+     */
     protected $dates = ['deleted_at'];
 
     /**
@@ -29,7 +41,7 @@ class Event extends Model
      */
     public function photos() {
 
-        return $this->hasMany('App\Photo')
+        return $this->hasMany('App\Photo');
     }
 
     /**

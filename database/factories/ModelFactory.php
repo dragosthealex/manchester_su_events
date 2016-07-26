@@ -20,24 +20,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Article::class, function (Faker\Generator $faker) {
+$factory->define(App\Event::class, function (Faker\Generator $faker) {
     return [
-        'language_id' => rand(1, 3),
-        'user_id' => 1,
-        'article_category_id' => rand(1, 2),
-        'title' => $faker->sentence,
-        'slug' => $faker->slug,
-        'introduction' => $faker->paragraph,
-        'content' => $faker->text,
-        'source' => $faker->url,
-    ];
-});
-
-$factory->define(App\ArticleCategory::class, function (Faker\Generator $faker) {
-    return [
-        'language_id' => rand(1, 3),
-        'user_id' => 1,
-        'title' => $faker->sentence,
-        'slug' => $faker->slug,
+        'title'         =>  str_random(10),
+        'description'   =>  $faker->text,
+        'creator_id'    =>  App\User::orderByRaw('RAND()')->first()->id,
+        'date_start'    =>  $faker->date(),
+        'time_start'    =>  $faker->time(),
+        'time_end'      =>  $faker->time(),
+        'price'         =>  $faker->numberBetween(1, 100),
+        'location_address'  =>  $faker->address,
+        'location_name'     =>  str_random(10),
+        'tickets_link'      =>  $faker->url,
     ];
 });
