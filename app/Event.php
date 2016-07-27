@@ -74,4 +74,68 @@ class Event extends Model
         return $this->belongsTo('App\Category', 'category_id');
     }
 
+    /**
+     * Accessor for price
+     *
+     * @return string
+     */
+    public function getPriceAttribute($value) {
+
+        if(!$value) {
+            return "Free";
+        }
+        
+        return "&pound;" . $value;        
+    }
+
+    /**
+     * Accessor for time start
+     *
+     * @return string
+     */
+    public function getTimeStartAttribute($value) {
+        
+        return date('g:ia', strtotime($value));
+    }
+
+    /**
+     * Accessor for time end
+     *
+     * @return string
+     */
+    public function getTimeEndAttribute($value) {
+        
+        return date('g:ia', strtotime($value));
+    }
+
+    /**
+     * Accessor for title
+     *
+     * @return string
+     */
+    public function getTitleAttribute($value) {
+
+        return ucwords($value);
+    }
+
+    /**
+     * Accessor for subtitle
+     *
+     * @return string
+     */
+    public function getSubtitleAttribute($value) {
+
+        return ucwords($value);
+    }
+
+    /**
+     * Accessor for description
+     *
+     * @return string
+     */
+    public function getDescriptionAttribute($value) {
+
+        return ucfirst($value);
+    }
+
 }

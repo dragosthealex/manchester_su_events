@@ -24,6 +24,7 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
     return [
         'title'         =>  str_random(10),
         'description'   =>  $faker->text,
+        'subtitle'      =>  str_random(10),
         'creator_id'    =>  App\User::orderByRaw('RAND()')->first()->id,
         'date_start'    =>  $faker->date(),
         'time_start'    =>  $faker->time(),

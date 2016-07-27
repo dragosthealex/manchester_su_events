@@ -15,6 +15,7 @@
               content=""/>
     @show
 
+        <link href="{{ asset('lib/jquery-mobile/css/jquery.mobile.custom.structure.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <link href="{{ asset('css/grayscale.min.css') }}" rel="stylesheet">
         <link href="{{ asset('lib/vegas/vegas.min.css') }}" rel="stylesheet">
@@ -40,6 +41,7 @@
 @include('partials.footer')
 
 <!-- Scripts -->
+<script src="{{ asset('lib/jquery-mobile/js/jquery.mobile.custom.min.js') }}"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="{{ asset('lib/section-scroll/jquery.section-scroll.js') }}"></script>
 <script src="{{ asset('js/grayscale.min.js') }}"></script>

@@ -130,6 +130,12 @@ section.content-section .section-title {
   background-color: rgba(113, 6, 113, 0.8);
   color: rgb(243, 243, 5);
 }
+.card.event-card {
+  height: 570px;
+}
+.card.event-card .card-description {
+  height: 115px;
+}
 /* /content */
 
 /* misc */

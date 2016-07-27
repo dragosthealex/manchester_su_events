@@ -1,12 +1,13 @@
 <?php
 
-/**************** Route Constraints **************************/
+/***********************  Route Constraints ***********************/
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
 
-/***************    Site routes  **********************************/
+/***********************  Page routes       ***********************/
 Route::get('/', 'HomeController@index');
 
+/***********************  Resource routes   ***********************/
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
@@ -19,7 +20,7 @@ Route::resource('events', 'EventController',
                            'only'        =>  ['create', 'store', 'update', 'destroy']
                           ]);
 
-/***************    Admin routes  **********************************/
+/***********************  Admin routes      ***********************/
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 
     // Admin Dashboard
@@ -32,7 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('category', 'Admin\CategoryController');
 });
 
-/***************    Api routes  **********************************/
+/***********************  Api routes    ****************************/
 Route::group(['prefix' => 'api'], function() {
   Route::resource('events', 'Api\EventController', 
                 ['except'   =>  ['create', 'store', 'update', 'destroy']]);

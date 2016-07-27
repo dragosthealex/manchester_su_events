@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\PhotoAlbum;
+use App\Event;
 use DB;
 
 class HomeController extends Controller {
@@ -15,6 +14,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('pages.home');
+		return view('pages.home')
+					->with('events', Event::all());
 	}
 }

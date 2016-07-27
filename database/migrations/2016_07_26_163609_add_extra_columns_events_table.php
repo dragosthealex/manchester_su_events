@@ -22,6 +22,7 @@ class AddExtraColumnsEventsTable extends Migration
             $table->string('location_name', 200)->nullable();
             $table->string('tickets_link', 200);
             $table->boolean('featured')->default(FALSE);
+            $table->string('subtitle', 100)->nullable()->default(NULL);
         });
     }
 
@@ -42,6 +43,7 @@ class AddExtraColumnsEventsTable extends Migration
             $table->dropColumn('location_name');
             $table->dropColumn('tickets_link');
             $table->dropColumn('featured');
+            $table->dropColumn('subtitle');
         });
     }
 }

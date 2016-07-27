@@ -113,6 +113,12 @@ $(document).ready(function() {
     });
     $("header.intro .vegas-wrapper").css("height", $("header.intro").height());
     $('.carousel.slide').carousel();
+     $(".carousel.slide").swiperight(function() {  
+      $(this).carousel('prev');  
+        });  
+     $(".carousel.slide").swipeleft(function() {  
+        $(this).carousel('next');  
+     });  
   }
 
   init();
