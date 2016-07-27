@@ -10,7 +10,7 @@ header.intro {
 .vegas-wrapper {
   display: table;
   width: 100%;
-  height: 100%;
+  height: 100%!important;
   background-color: rgba(0, 0, 0, 0.50);
 }
 .vegas-slide-inner {
@@ -38,7 +38,7 @@ header.intro {
 }
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
-    font-size: 60px;
+    font-size: 3pc;
   }
   .navbar-custom {
     background: transparent;

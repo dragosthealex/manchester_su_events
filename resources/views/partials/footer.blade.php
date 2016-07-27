@@ -1,7 +1,7 @@
 <div id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6" >
+      <div class="col-sm-6" >
         <p><strong>Email:</strong>&nbsp;info.su@manchester.ac.uk</p>
         <p><strong>Tel:</strong>&nbsp;0161 275 2930</p>
         <p><strong>Text:</strong>&nbsp;text EXEC&nbsp;to 81025 followed&nbsp;by your message&nbsp;(standard charges apply)</p>
@@ -12,8 +12,8 @@
         </p>
         <p class="copyright">@<?=date('Y')?> University of Manchester Students’ Union. All rights reserved.</p>
       </div>
-      <div class="col-xs-6 text-right">
-        <p><img alt="" src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/63366/optimized/microsite-white-logo.png"></p>
+      <div class="col-sm-6 text-right">
+        <p><img alt="SU Logo" class="img-responsive su-logo" src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/63366/optimized/microsite-white-logo.png"></p>
       </div>
     </div>
   </div>

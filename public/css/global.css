@@ -130,11 +130,8 @@ section.content-section .section-title {
   background-color: rgba(113, 6, 113, 0.8);
   color: rgb(243, 243, 5);
 }
-.card.event-card {
-  height: 570px;
-}
 .card.event-card .card-description {
-  height: 115px;
+  height: 120px;
 }
 /* /content */
 
@@ -210,6 +207,9 @@ section.content-section .section-title {
 #footer p strong {
   color:  #ffff86;
 }
+#footer .su-logo {
+  display: inline-block;
+}
 
 /* /footer */
 
@@ -248,6 +248,12 @@ section.content-section .section-title {
   }
   .navbar-custom .navbar-collapse {
     background: purple;
+  }
+  section.content-section .section-title {
+    font-size: 2.5pc;
+  }
+  #footer > .container > .row > .col-sm-6 {
+    text-align: center;
   }
 }
 @media(min-width: 1500px) {
