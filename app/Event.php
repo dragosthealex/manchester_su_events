@@ -75,6 +75,20 @@ class Event extends Model
     }
 
     /**
+     * Accessor for cover
+     *
+     * @return string
+     */
+    public function getCoverAttribute($value) {
+
+        if(!$value) {
+            return "https://placeholdit.imgix.net/~text?txtsize=70&txt=No%20Photo&w=1280&h=720";
+        }
+        
+        return $value->filename;        
+    }
+
+    /**
      * Accessor for price
      *
      * @return string

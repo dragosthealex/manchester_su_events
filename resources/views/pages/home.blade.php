@@ -102,6 +102,9 @@ header.intro {
   </div>
   <div class="row">
     <div class="span-12">
+      @foreach($events as $event)
+        @include('partials.event_card', ['event' => $event, 'mix' => true])
+      @endforeach
     </div>
   </div>
 </section>

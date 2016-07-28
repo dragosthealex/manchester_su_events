@@ -1,4 +1,4 @@
-<div class="card has-cover event-card">
+<div class="card has-cover event-card <?=isset($mix)&&$mix?'mix':''?>">
   <img class="img-responsive card-cover" src="http://placehold.it/1280x720" alt=""/>
   <div class="card-content">
     <div class="card-body">
