@@ -4,8 +4,18 @@
 
 @section('styles')
 <style>
+.main-content {
+  margin-top: 100px;
+}
 header.intro {
   height: 100%;
+}
+.navbar-custom {
+  background-color: transparent; 
+  padding: 20px 0; 
+}
+.navbar-custom .navbar-brand img {
+  height: 60px;
 }
 .vegas-wrapper {
   display: table;
@@ -111,7 +121,10 @@ $(document).ready(function() {
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
-    $("header.intro .vegas-wrapper").attr("style", "height:" + $("header.intro").height() + "px!important;");
+    // Fix firefox shit
+    if($(window).width() > 768) {
+      $("header.intro .vegas-wrapper").attr("style", "height:" + $("header.intro").height() + "px!important;");
+    }
     $('.carousel.slide').carousel();
      $(".carousel.slide").swiperight(function() {  
       $(this).carousel('prev');  
