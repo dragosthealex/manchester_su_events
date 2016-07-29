@@ -48,6 +48,11 @@ section.content-section .section-title {
   font-size: 70px;
   letter-spacing: 10px;
 }
+section .row.inside-bar {
+  background: #fefefe;
+  margin: 40px -15px;
+  padding: 20px;
+}
 
 .card {
   border-radius: 5px;
@@ -65,7 +70,7 @@ section.content-section .section-title {
   padding: 16px;
   position: relative;
 }
-.card.has-cover .card-content .card-body .card-title {
+.card.has-cover .card-title {
   position: absolute;
   top: -50px;
   white-space: nowrap;
@@ -74,7 +79,7 @@ section.content-section .section-title {
   width: 90%;
   text-align: left;
 }
-.card.has-cover .card-content .card-body .card-title a {
+.card.has-cover .card-title a {
   font-family: 'baumans';
   color: rgb(243, 243, 5);
   text-shadow: 2px 2px 2px #710671;
@@ -160,6 +165,29 @@ a.link-dark:hover {
 }
 /* /misc */
 
+/* forms */
+.btn {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.btn-primary {
+  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
+  color: rgb(243, 243, 5);
+  background-color: rgba(113, 6, 113, 0.3);
+}
+.btn-primary:hover {
+  background-color: rgba(113, 6, 113, 0.8);
+  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
+  color: rgb(243, 243, 5);
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-image: linear-gradient(rgba(113, 6, 113, 0.8),rgba(113, 6, 113, 0.9) 6%,#710671);
+  background-color: rgba(113, 6, 113, 0.8);
+}
+.btn-primary.active:hover,
+.btn-primary:active:hover {
+  background-color: rgba(113, 6, 113, 1);
+}
 /* nav */
 .navbar-custom .nav li a {
   transition: padding 0.3s;
@@ -252,6 +280,7 @@ a.link-dark:hover {
 @media(max-width: 768px) {
   .navbar-custom {
     background: #710671;
+    padding: 0;
   }
   .navbar-custom,
   .navbar-custom .navbar-header {
@@ -291,6 +320,21 @@ a.link-dark:hover {
   }
   .hidden-xl {
     display: none!important;
+  }
+  .col-xl-2 {
+    width: 20%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.33%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-12 {
+    width: 100%;
   }
 }
 /* /media queries */

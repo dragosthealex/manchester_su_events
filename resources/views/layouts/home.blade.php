@@ -48,6 +48,7 @@
 <script src="{{ asset('lib/vegas/vegas.min.js') }}"></script>
 <script src="{{ asset('js/nicescroll.js') }}"></script>
 <script src="{{ asset('js/mixitup.min.js') }}"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 @yield('scripts')
 <script src="{{ asset('js/global.js') }}"></script>
 </body>

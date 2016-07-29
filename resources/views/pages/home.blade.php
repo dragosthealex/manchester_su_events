@@ -46,6 +46,48 @@ header.intro {
 .featured-carousel .carousel-indicators {
   bottom: -50px;
 }
+#events .event-wrapper {
+  margin-bottom: 10px;
+}
+#events .event-wrapper .card,
+#events .event-wrapper .card .card-body {
+  height: 300px;
+}
+#events .event-wrapper .card .card-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: 0,0;
+  background-size: cover;
+  height: 100%;
+}
+#events .event-wrapper .card .front {
+  z-index: 2!important;
+}
+#events .event-wrapper.mix {
+  display: none;
+  padding: 0 4px;
+}
+#events .event-card {
+  background-color: transparent;
+}
+#events .event-card .card-content {
+  background-color: #fefefe;
+}
+#events .event-card .card-title {
+  bottom: 0;
+  top: auto;
+  margin-left: 20px;
+}
+#events .event-card .card-details {
+  font-size: 15px;
+  font-weight: bold;
+}
+#events .event-card .card-subtitle {
+  display: none;
+}
+#events .event-card .card-footer {
+  display: none;
+}
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;
@@ -55,6 +97,7 @@ header.intro {
     border: none;
     opacity: 0;
     visibility: hidden;
+    padding: 0;
   }
 }
 </style>
@@ -100,10 +143,58 @@ header.intro {
       <h1 class="section-title">All Events</h1>
     </div>
   </div>
+  <div class="row inside-bar">
+    <div class="container">
+      <div class="row">
+        <div class="span-12">
+          <a class="btn btn-primary filter" data-filter="all">Show All</a>
+          <a class="btn btn-primary filter" data-filter=".featured-yes">Featured</a>
+          &nbsp;|&nbsp;
+          <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
+          <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
-    <div class="span-12">
+    <div class="span-12 events-container">
       @foreach($events as $event)
-        @include('partials.event_card', ['event' => $event, 'mix' => true])
+        <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short"
+             data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
+             data-title="<?=$event->title?>">
+          <?php /*<!-- @include('partials.event_card', ['event' => $event, 'description_length' => 90]) -->*/?>
+
+          <div class="card has-cover event-card">
+            <div class="front">
+              <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
+              <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+            </div>
+            <div class="back">
+              <div class="card-content">
+                <div class="card-body">
+                  <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+                  <p class="card-description">
+                    @if(strlen($event->description) > 150)
+                      <?=substr($event->description, 0, 150)?>... <a href="{{ url('events/' . $event->id) }}">More</a>
+                    @else
+                      <?=$event->description?>
+                    @endif
+                  </p>
+                  <p class="card-details">
+                    <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+                  </p>
+                </div>
+                <hr>
+                <div class="card-footer">
+                  <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                  <a class="card-action" href="#">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
       @endforeach
     </div>
   </div>
@@ -134,7 +225,10 @@ $(document).ready(function() {
         });  
      $(".carousel.slide").swipeleft(function() {  
         $(this).carousel('next');  
-     });  
+     });
+     $("#events .events-container").mixItUp();
+     $("#events .events-container").mixItUp('sort', 'date:asc');
+     $("#events .card").flip();
   }
 
   init();
