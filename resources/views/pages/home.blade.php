@@ -47,7 +47,7 @@ header.intro {
   bottom: -50px;
 }
 #events .event-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 #events .event-wrapper .card,
 #events .event-wrapper .card .card-body {
@@ -65,7 +65,7 @@ header.intro {
 }
 #events .event-wrapper.mix {
   display: none;
-  padding: 0 4px;
+  padding: 0 1px;
 }
 #events .event-card {
   background-color: transparent;

@@ -75,6 +75,16 @@ class Event extends Model
     }
 
     /**
+     * Get the society of this event (if belongs to one)
+     *
+     * @return Eloquent\Relationship
+     */
+    public function society() {
+
+        return $this->belongsTo('App\Society', 'society_id');
+    }
+
+    /**
      * Accessor for cover
      *
      * @return string

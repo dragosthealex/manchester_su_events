@@ -22,16 +22,32 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
     return [
-        'title'         =>  str_random(10),
-        'description'   =>  $faker->text,
-        'subtitle'      =>  str_random(10),
-        'creator_id'    =>  App\User::orderByRaw('RAND()')->first()->id,
-        'date_start'    =>  $faker->dateTimeBetween('next sunday', 'next wednesday')->format('Y-m-d'),
-        'time_start'    =>  $faker->time(),
-        'time_end'      =>  $faker->time(),
-        'price'         =>  $faker->numberBetween(1, 100),
+        'title'             =>  str_random(10),
+        'description'       =>  $faker->text,
+        'subtitle'          =>  str_random(10),
+        'creator_id'        =>  App\User::orderByRaw('RAND()')->first()->id,
+        'date_start'        =>  $faker->dateTimeBetween('next sunday', 'next wednesday')->format('Y-m-d'),
+        'time_start'        =>  $faker->time(),
+        'time_end'          =>  $faker->time(),
+        'price'             =>  $faker->numberBetween(0, 100),
         'location_address'  =>  $faker->address,
-        'location_name'     =>  str_random(10),
+        'location_name'     =>  $faker->streetName,
         'tickets_link'      =>  $faker->url,
+        'society_id'        =>  (rand(0,1) ? App\Society::orderByRaw('RAND()')->first()->id : NULL),
+        'category_id'       =>  App\Category::orderByRaw('RAND()')->first()->id,
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name'          =>  $faker->safeColorName,
+        'description'   =>  $faker->text(),
+    ];
+});
+
+$factory->define(App\Society::class, function (Faker\Generator $faker) {
+    return [
+        'name'          =>  $faker->company,
+        'description'   =>  $faker->text,
     ];
 });
