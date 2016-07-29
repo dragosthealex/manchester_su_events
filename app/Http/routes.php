@@ -36,5 +36,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 /***********************  Api routes    ****************************/
 Route::group(['prefix' => 'api'], function() {
   Route::resource('events', 'Api\EventController', 
-                ['except'   =>  ['create', 'store', 'update', 'destroy']]);
+                 ['only'   =>  ['index', 'show']]);
+  Route::resource('societies', 'Api\SocietyController',
+                 ['only'  =>  ['index', 'show']]);
+  Route::resource('categories', 'Api\CategoryController',
+                 ['only'  =>  ['index', 'show']]);
 });

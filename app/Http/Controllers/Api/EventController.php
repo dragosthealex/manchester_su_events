@@ -8,17 +8,68 @@ use App\Helpers\JsonHelper;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Event;
+use Validator;
 
 class EventController extends Controller
 {
   /**
    * Display a listing of the resource.
    *
+   * Can have the following GET filter params:  
+   *  @param date_from - return all events after this date, including
+   *  @param date_to   - return all events before this date, including
+   *  @param date_on   - return all events exactly on this date
+   *  @param query     - do a search for given query through events title / description
+   *  @param category  - must be a valid category id
+   *  @param tags[]    - // TODO must be a valid tag string / id
+   *  @param society   - return all events of this society 
+   *  @param author    - return all events of this author
+   *  @param address   - // TODO return all events at this address
+   *
    * @return \Illuminate\Http\Response
    */
-  public function index() {
-    
-    $events = Event::all();
+  public function index(Request $request) {
+    // Validate
+    $validator = Validator::make($request->all(), [
+      'date_from'     =>  'sometimes|date',
+      'date_to'       =>  'sometimes|date',
+      'date_on'       =>  'sometimes|date',
+      'query'         =>  'sometimes',
+      'category'      =>  'sometimes|exists:event_categories,id',
+      'society'       =>  'sometimes|exists:societies,id',
+      'author'        =>  'sometimes|exists:users,id',
+    ]);
+    if($validator->fails()) {
+      return JsonHelper::error(json_encode($validator->errors));
+    }
+
+    $condition = "";
+    if($request->has('date_from')) {
+      $condition.= "(date_start >= DATE(".$request->input('date_from').") AND ";
+    }
+    if($request->has('date_to')) {
+      $condition.= "(date_start <= DATE(".$request->input('date_to').") AND ";
+    }
+    if($request->has('date_on')) {
+      $condition.= "(date_start = DATE(".$request->input('date_on').") AND ";
+    }
+    if($request->has('query')) {
+      $condition.= "((title LIKE '%".$request->input('query')."%') OR (description LIKE '%".$request->input('query')."%')) AND ";
+    }
+    if($request->has('category')) {
+      $condition.= "(category_id = '".$request->input('category')."') AND ";
+    }
+    if($request->has('society')) {
+      $condition.= "(society_id = '".$request->input('society')."') AND ";
+    }
+    if($request->has('author')) {
+      $condition.= "(creator_id = '".$request->input('author')."') AND ";
+    }
+    $condition.= "(1 = 1)";
+
+    // Do the query
+    $events = Event::whereRaw($condition)->get();
+
     return JsonHelper::success($events);
   }
 
