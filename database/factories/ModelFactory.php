@@ -26,7 +26,7 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'description'       =>  $faker->text,
         'subtitle'          =>  str_random(10),
         'creator_id'        =>  App\User::orderByRaw('RAND()')->first()->id,
-        'date_start'        =>  $faker->dateTimeBetween('next sunday', 'next wednesday')->format('Y-m-d'),
+        'date_start'        =>  $faker->dateTimeBetween('now', 'next sunday')->format('Y-m-d'),
         'time_start'        =>  $faker->time(),
         'time_end'          =>  $faker->time(),
         'price'             =>  $faker->numberBetween(0, 100),
