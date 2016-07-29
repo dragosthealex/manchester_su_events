@@ -45,13 +45,13 @@ class EventController extends Controller
 
     $condition = "";
     if($request->has('date_from')) {
-      $condition.= "(date_start >= DATE(".$request->input('date_from').") AND ";
+      $condition.= "(DATEDIFF(date_start, '".$request->input('date_from')."' >= 0) AND ";
     }
     if($request->has('date_to')) {
-      $condition.= "(date_start <= DATE(".$request->input('date_to').") AND ";
+      $condition.= "(DATEDIFF(date_start, '".$request->input('date_to')."' <= 0) AND ";
     }
     if($request->has('date_on')) {
-      $condition.= "(date_start = DATE(".$request->input('date_on').") AND ";
+      $condition.= "(DATEDIFF(date_start, '".$request->input('date_on')."' = 0) AND ";
     }
     if($request->has('query')) {
       $condition.= "((title LIKE '%".$request->input('query')."%') OR (description LIKE '%".$request->input('query')."%')) AND ";
