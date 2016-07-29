@@ -168,6 +168,7 @@ a.link-dark:hover {
 /* forms */
 .btn {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 5px;
 }
 .btn-primary {
   background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);

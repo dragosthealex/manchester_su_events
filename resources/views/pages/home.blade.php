@@ -49,9 +49,11 @@ header.intro {
 #events .event-wrapper {
   margin-bottom: 6px;
 }
-#events .event-wrapper .card,
-#events .event-wrapper .card .card-body {
+#events .event-wrapper .card {
   height: 300px;
+}
+#events .event-wrapper .card .card-body {
+  height: 240px;
 }
 #events .event-wrapper .card .card-cover {
   background-repeat: no-repeat;
@@ -70,6 +72,10 @@ header.intro {
 #events .event-card {
   background-color: transparent;
 }
+#events .card.event-card .card-description {
+  height: 100px;
+  margin-bottom: 20px;
+}
 #events .event-card .card-content {
   background-color: #fefefe;
 }
@@ -83,9 +89,6 @@ header.intro {
   font-weight: bold;
 }
 #events .event-card .card-subtitle {
-  display: none;
-}
-#events .event-card .card-footer {
   display: none;
 }
 @media(max-width: 768px) {
@@ -144,22 +147,21 @@ header.intro {
     </div>
   </div>
   <div class="row inside-bar">
-    <div class="container">
-      <div class="row">
-        <div class="span-12">
-          <a class="btn btn-primary filter" data-filter="all">Show All</a>
-          <a class="btn btn-primary filter" data-filter=".featured-yes">Featured</a>
-          &nbsp;|&nbsp;
-          <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
-          <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>
-        </div>
+    <div class="col-xs-12">
+      <a class="btn btn-primary filter" data-filter="all">Show All</a>
+      @foreach(App\Category::all() as $category)
+        <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
+      @endforeach
+      <div style="display:inline-block;margin-left:20px;">
+        <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
+        <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="span-12 events-container">
       @foreach($events as $event)
-        <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short"
+        <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
           <?php /*<!-- @include('partials.event_card', ['event' => $event, 'description_length' => 90]) -->*/?>
