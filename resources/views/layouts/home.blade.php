@@ -24,6 +24,23 @@
         <script src="{{ asset('js/site.js') }}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Rs-_7jPF_N0N3c18VocHuhNNY2fvqN4"
             async defer></script>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '147310399038490',
+              xfbml      : true,
+              version    : 'v2.7'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +63,6 @@
 <script src="{{ asset('lib/section-scroll/jquery.section-scroll.js') }}"></script>
 <script src="{{ asset('js/grayscale.min.js') }}"></script>
 <script src="{{ asset('lib/vegas/vegas.min.js') }}"></script>
-<script src="{{ asset('js/nicescroll.js') }}"></script>
 <script src="{{ asset('js/mixitup.min.js') }}"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 @yield('scripts')
