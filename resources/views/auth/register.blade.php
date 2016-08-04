@@ -5,13 +5,13 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="row">
-        <div class="page-header">
-            <h2>{!! trans('site/user.register') !!}</h2>
-        </div>
-    </div>
     <section id="register-section">
-        <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="page-header">
+                    <h2>{!! trans('site/user.register') !!}</h2>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     {!! Form::open(array('url' => url('auth/register'), 'method' => 'post', 'files'=> true)) !!}

@@ -28,6 +28,10 @@ body {
   color: #333;
   background-color: #efefef;
 }
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
 .visible-xl {
   display: none;
 }
@@ -41,6 +45,10 @@ body {
 }
 section.content-section {
   padding-top: 70px;
+  padding-bottom: 50px;
+}
+section.content-section:first-child {
+  padding-top: 0;
 }
 section.content-section .section-title {
   font-family: 'snack_patrol';
@@ -86,7 +94,8 @@ section .row.inside-bar {
   text-transform: capitalize;
   text-decoration: none;
 }
-.card.has-cover .card-content .card-body .card-subtitle {
+.card.has-cover .card-content .card-body .card-subtitle,
+.event-subtitle {
   font-family: 'baumans';
   text-align: center;
   color: green;
@@ -94,15 +103,21 @@ section .row.inside-bar {
   text-transform: capitalize;
   margin-bottom: 10px;
 }
-.card.has-cover .card-content .card-body .card-date {
-
+.event-date {
+  text-align: center;
+}
+.card.has-cover .card-content .card-body .card-date,
+.event-date a {
+  color: #444;
+  text-align: center;
 }
 .card .card-content .card-body .card-description {
   text-align: left;
   font-size: 15px;
   color: #555;
 }
-.card .card-content .card-body .card-details {
+.card .card-content .card-body .card-details,
+.event-details {
   text-align: left;
   color: #515151;
   margin-bottom: 0;

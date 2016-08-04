@@ -22,7 +22,7 @@
         <link href="{{ asset('css/global.css') }}" rel="stylesheet">
 
         <script src="{{ asset('js/site.js') }}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js"
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Rs-_7jPF_N0N3c18VocHuhNNY2fvqN4"
             async defer></script>
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,7 +37,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 @include('partials.nav')
 
-<div class="container main-content">
+<div class="main-content page">
 @yield('content')
 </div>
 @include('partials.footer')
