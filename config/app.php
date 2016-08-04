@@ -150,6 +150,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 
+        /*
+         * External Packages Providers...
+         */
+        Artdarek\OAuth\OAuthServiceProvider::class,
+
     ],
 
     /*
@@ -203,6 +208,8 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        
+        'OAuth'     => Artdarek\OAuth\Facade\OAuth::class,
     ],
 
 ];
