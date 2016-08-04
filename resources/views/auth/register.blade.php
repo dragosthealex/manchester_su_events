@@ -14,44 +14,48 @@
             </div>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    {!! Form::open(array('url' => url('auth/register'), 'method' => 'post', 'files'=> true)) !!}
+                    <div class="oauth-login-buttons">
+                        <a class="btn btn-social btn-facebook" onclick="fb_login();"><i class="fa fa-facebook"></i>&nbsp;|&nbsp;login</a>
+                        <a class="btn btn-social btn-google" onclick="fb_login();"><i class="fa fa-google"></i>&nbsp;|&nbsp;sign in</a>
+                    </div>
+                    <div id="status">
+                    </div>
+                    <div class="word-separator">
+                        <span>or</span>
+                    </div>
+                    {!! Form::open(array('url' => url('auth/register'), 'method' => 'post', 'files'=> true, 'class' => 'form-400')) !!}
                     <div class="form-group  {{ $errors->has('name') ? 'has-error' : '' }}">
-                        {!! Form::label('name', trans('site/user.name'), array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name')) !!}
                             <span class="help-block">{{ $errors->first('name', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group  {{ $errors->has('username') ? 'has-error' : '' }}">
-                        {!! Form::label('username', 'Username', array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::text('username', null, array('class' => 'form-control')) !!}
+                            {!! Form::text('username', null, array('class' => 'form-control', 'placeholder' => 'Username')) !!}
                             <span class="help-block">{{ $errors->first('username', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">
-                        {!! Form::label('email', trans('site/user.e_mail'), array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                            {!! Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Email')) !!}
                             <span class="help-block">{{ $errors->first('email', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
-                        {!! Form::label('password', "Password", array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::password('password', array('class' => 'form-control')) !!}
+                            {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
                             <span class="help-block">{{ $errors->first('password', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group  {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                        {!! Form::label('password_confirmation', "Confirm Password", array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
+                            {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Password confirmation')) !!}
                             <span class="help-block">{{ $errors->first('password_confirmation', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3 text-center">
+                        <div class="span-12 text-right">
                             <button type="submit" class="btn btn-success">
                                 Register
                             </button>

@@ -142,34 +142,36 @@
 
 @section('scripts')
 <script>
-function initMap() {
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({
-    'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address))?>"
-  }, function(results, status) {
-    var myOptions = {
-          zoom: 8,
-          center: {lat: '53.466708', lng:'-2.234449'},
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    if (status == google.maps.GeocoderStatus.OK) {
-      myOptions = {
-          zoom: 8,
-          center: results[0].geometry.location,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+$(document).ready(function() {
+  function initMap() {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address))?>"
+    }, function(results, status) {
+      var myOptions = {
+            zoom: 8,
+            center: {lat: '53.466708', lng:'-2.234449'},
+            mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-    }
-    // Create map
-    map = new google.maps.Map(document.getElementById("the-map"), myOptions);
+      if (status == google.maps.GeocoderStatus.OK) {
+        myOptions = {
+            zoom: 8,
+            center: results[0].geometry.location,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+      }
+      // Create map
+      map = new google.maps.Map(document.getElementById("the-map"), myOptions);
 
-    // Create marker
-    var marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
+      // Create marker
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
     });
-  });
-}
-initMap();
+  }
+  initMap();
+});
 </script>
 <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="{{ asset('lib/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js') }}"></script>

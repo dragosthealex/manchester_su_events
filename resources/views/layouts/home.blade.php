@@ -28,8 +28,14 @@
           window.fbAsyncInit = function() {
             FB.init({
               appId      : '147310399038490',
+              cookie     : true,
+              oauth      : true,
               xfbml      : true,
               version    : 'v2.7'
+            });
+
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
             });
           };
 
@@ -41,6 +47,7 @@
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
         </script>
+        <script src="{{ asset('js/fb-login.js') }}"></script>
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

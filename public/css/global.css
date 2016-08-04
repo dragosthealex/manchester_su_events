@@ -178,6 +178,13 @@ a.link-dark {
 a.link-dark:hover {
   color: rgba(113, 6, 113, 0.8);
 }
+.word-separator {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+  font-family: 'baumans';
+}
 /* /misc */
 
 /* forms */
@@ -203,6 +210,65 @@ a.link-dark:hover {
 .btn-primary.active:hover,
 .btn-primary:active:hover {
   background-color: rgba(113, 6, 113, 1);
+}
+.btn-social {
+  padding: 5px 10px;
+  border-radius: 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 15px;
+  color: white;
+}
+.btn-social.btn-login {
+
+}
+.btn-social.btn-facebook {
+  background: #3b5998;
+  border-bottom: 1px solid #29487d;
+}
+.btn-social.btn-facebook:hover {
+  background: #2c4986;
+}
+.btn-social.btn-facebook:active {
+  background: #29487d;
+}
+.btn-social.btn-google {
+  background: #f44836;
+  border-bottom: 1px solid #d42c20;
+}
+.btn-social.btn-google:hover {
+  background: #e03e32;
+}
+.btn-social.btn-google:active {
+  background: #d42c20;
+}
+.oauth-login-buttons {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.oauth-login-buttons .btn-social {
+  width: 49%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.form-400 {
+  max-width: 400px;
+  margin: auto;
+}
+.form-control {
+  width: 100%;
+  border-radius: 0;
+  padding: 12px 15px;
+  font-size: 15px;
+  height: 44px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.form-group .help-block {
+  max-width: 400px;
+  margin: auto;
 }
 /* nav */
 .navbar-custom .nav li a {
@@ -290,6 +356,9 @@ a.link-dark:hover {
   }
   .main-content {
     min-height: 100%;
+  }
+  .page.main-content {
+    min-height: 95%;
   }
 }
 

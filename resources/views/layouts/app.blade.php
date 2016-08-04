@@ -22,13 +22,16 @@
         <link href="{{ asset('css/global.css') }}" rel="stylesheet">
 
         <script src="{{ asset('js/site.js') }}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Rs-_7jPF_N0N3c18VocHuhNNY2fvqN4"
-            async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Rs-_7jPF_N0N3c18VocHuhNNY2fvqN4&sensor=false"
+            async defer type="text/javascript"></script>
+
         <script>
           window.fbAsyncInit = function() {
             FB.init({
               appId      : '147310399038490',
               xfbml      : true,
+              oauth      : true,
+              cookie     : true,
               version    : 'v2.7'
             });
           };
@@ -41,6 +44,7 @@
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
         </script>
+        <script src="{{ asset('js/fb-login.js') }}"></script>
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
