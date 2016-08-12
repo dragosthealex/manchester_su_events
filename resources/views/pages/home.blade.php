@@ -134,14 +134,16 @@ header.intro {
 @section('content')
 
 <!-- Intro Header -->
-<header class="intro parallax-window">
+<header class="intro parallax-window noselect">
   <div class="intro-body">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h1 class="brand-heading">Welcome</h1>
-          <p class="intro-text">Find out the hottest freshers' events.
-            <br>Limited edition
+          <p class="intro-text">To the official University of
+            <br>Manchester Students' Union
+            <br>Welcome Week 2016
+            <br>#MADEITTOMCR
           </p>
           <a href="#featured" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
@@ -155,7 +157,15 @@ header.intro {
 <section id="featured" class="container-fluid content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-      <h1 class="section-title">Featured</h1>
+      <h1 class="section-title">Wristbands</h1>
+      <p class="section-subtitle">
+        Congratulations! You’ve made it to Manchester!
+      <p>
+      <p class="section-text">
+        Explore Manchester and start making new friends with an Official Welcome
+        Week wristband. For only £55 (inc. booking fee) you will gain entry into all of
+        the events below.
+      </p>
     </div>
   </div>
   <div class="row">
@@ -180,6 +190,7 @@ header.intro {
       <div style="display:inline-block;margin-left:20px;">
         <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
         <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>
+        <a class="btn btn-primary" href="{{ url('events') }}">Calendar View</a>
       </div>
     </div>
   </div>

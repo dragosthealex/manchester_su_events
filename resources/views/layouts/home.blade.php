@@ -81,6 +81,7 @@
     @endforeach
   @endif
   });
+
 </script>
 @yield('scripts')
 <script src="{{ asset('js/global.js') }}"></script>

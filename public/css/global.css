@@ -35,6 +35,15 @@ a {
 .visible-xl {
   display: none;
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
 
 /* content */
 .main-content {
@@ -43,6 +52,7 @@ a {
 .parallax-window {
   position: absolute;
 }
+
 section.content-section {
   padding-top: 70px;
   padding-bottom: 50px;
@@ -55,6 +65,13 @@ section.content-section .section-title {
   color: rgba(113, 6, 113, 0.8);
   font-size: 70px;
   letter-spacing: 10px;
+}
+section.content-section .section-subtitle {
+  font-family: 'baumans';
+  font-size: 30px;
+}
+section.content-section .section-text {
+  text-align: left;
 }
 section .row.inside-bar {
   background: #fefefe;

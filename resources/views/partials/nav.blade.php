@@ -1,4 +1,4 @@
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-custom navbar-fixed-top noselect" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -17,7 +17,7 @@
           <a href="#page-top"></a>
         </li>
         <li>
-          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#featured">Featured</a>
+          <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#featured">Wristbands</a>
         </li>
         <li>
           <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
