@@ -18,7 +18,8 @@
         "barryvdh/laravel-debugbar": "^2.0@dev",
         "laravelcollective/html": "5.1.*",
         "cviebrock/eloquent-sluggable": "3.1.4",
-        "oriceon/oauth-5-laravel": "dev-master"
+        "oriceon/oauth-5-laravel": "dev-master",
+        "edvinaskrucas/notification": "5.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

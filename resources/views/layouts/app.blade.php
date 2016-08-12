@@ -43,6 +43,11 @@
              js.src = "//connect.facebook.net/en_US/sdk.js";
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
+
+          // Global vars
+          var urls = {
+            home : "{{ url('/') }}"
+          };
         </script>
         <script src="{{ asset('js/fb-login.js') }}"></script>
     @yield('styles')
@@ -69,8 +74,22 @@
 <script src="{{ asset('lib/section-scroll/jquery.section-scroll.js') }}"></script>
 <script src="{{ asset('js/grayscale.min.js') }}"></script>
 <script src="{{ asset('lib/vegas/vegas.min.js') }}"></script>
+<script src="{{ asset('lib/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
 <script src="{{ asset('js/mixitup.min.js') }}"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+<script>
+  $(document).ready(function() {
+    @if(count(Notification::all()->all()))
+      @foreach (Notification::all()->all() as $key => $notification)
+        $.notify({
+        message: "<?=$notification->getMessage()?>"
+      }, {
+        type: '{{$notification->getType()}}'
+      });
+    @endforeach
+  @endif
+  });
+</script>
 @yield('scripts')
 <script src="{{ asset('js/global.js') }}"></script>
 

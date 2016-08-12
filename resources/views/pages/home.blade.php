@@ -61,9 +61,34 @@ header.intro {
   background-origin: 0,0;
   background-size: cover;
   height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: inset 0 -50px 200px -50px #000;
+  -moz-box-shadow: inset 0 -50px 200px -50px #000;
+  box-shadow: inset 0 -50px 200px -50px #000;
+}
+#events .event-wrapper .card .card-cover:hover {
+  -webkit-box-shadow: inset 0 -50px 200px -10px #000;
+  -moz-box-shadow: inset 0 -50px 200px -10px #000;
+  box-shadow: inset 0 -50px 200px -10px #000;
 }
 #events .event-wrapper .card .front {
   z-index: 2!important;
+}
+#events .event-wrapper .card .front .card-title {
+
+}
+#events .event-wrapper .card .front .card-date {
+  bottom: 0;
+  position: absolute;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 16px;
+}#events .event-wrapper .card .front .card-date a {
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 #events .event-wrapper.mix {
   display: none;
@@ -164,12 +189,11 @@ header.intro {
         <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
-          <?php /*<!-- @include('partials.event_card', ['event' => $event, 'description_length' => 90]) -->*/?>
-
           <div class="card has-cover event-card">
             <div class="front">
               <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
               <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+              <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
             <div class="back">
               <div class="card-content">
@@ -194,8 +218,6 @@ header.intro {
               </div>
             </div>
           </div>
-
-
         </div>
       @endforeach
     </div>

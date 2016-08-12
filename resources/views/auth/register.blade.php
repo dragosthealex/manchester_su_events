@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="oauth-login-buttons">
-                        <a class="btn btn-social btn-facebook" onclick="fb_login();"><i class="fa fa-facebook"></i>&nbsp;|&nbsp;login</a>
-                        <a class="btn btn-social btn-google" onclick="fb_login();"><i class="fa fa-google"></i>&nbsp;|&nbsp;sign in</a>
+                        <a class="btn btn-social btn-facebook" href="{{ url('/oauth/facebook') }}"><i class="fa fa-facebook"></i>&nbsp;|&nbsp;login</a>
+                        <a class="btn btn-social btn-google"><i class="fa fa-google"></i>&nbsp;|&nbsp;sign in</a>
                     </div>
                     <div id="status">
                     </div>

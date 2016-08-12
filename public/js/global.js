@@ -5,4 +5,9 @@ $(document).ready(function() {
   }
 
   init();
+
+  // Bootstrap notify defaults
+  $.notifyDefaults({
+    placement:{from: 'bottom',align: 'center'},
+  });
 });

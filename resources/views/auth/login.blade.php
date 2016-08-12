@@ -14,18 +14,16 @@
             </div>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    {!! Form::open(array('url' => url('auth/login'), 'method' => 'post', 'files'=> true)) !!}
+                    {!! Form::open(array('url' => url('auth/login'), 'method' => 'post', 'files'=> true, 'class'=>'form-400')) !!}
                     <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">
-                        {!! Form::label('email', "E-Mail Address", array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                            {!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'Email')) !!}
                             <span class="help-block">{{ $errors->first('email', ':message') }}</span>
                         </div>
                     </div>
                     <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
-                        {!! Form::label('password', "Password", array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::password('password', array('class' => 'form-control')) !!}
+                            {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
                             <span class="help-block">{{ $errors->first('password', ':message') }}</span>
                         </div>
                     </div>

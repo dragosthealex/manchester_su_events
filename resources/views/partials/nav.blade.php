@@ -37,12 +37,16 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 @if(Auth::check())
-                @if(Auth::user()->admin==1)
-                <li>
-                  <a href="{{ url('admin/dashboard') }}"><i class="fa fa-tachometer"></i> Admin Dashboard</a>
-                </li>
-                @endif
-                <li role="presentation" class="divider"></li>
+                  @if(Auth::user()->admin)
+                  <li>
+                    <a href="{{ url('admin/dashboard') }}"><i class="fa fa-tachometer"></i> Admin Dashboard</a>
+                  </li>
+                  @endif
+                  @if(Auth::user()->can_add_events || Auth::user()->admin)
+                    <li>
+                      <a href="{{ url('admin/dashboard') }}"><i class="fa fa-plus"></i> Post Event</a>
+                    </li>
+                  @endif
                 @endif
                 <li>
                   <a href="{{ url('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a>

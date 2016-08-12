@@ -7,12 +7,16 @@ Route::pattern('slug', '[0-9a-z-_]+');
 /***********************  Page routes       ***********************/
 Route::get('/', 'HomeController@index');
 
-/***********************  Resource routes   ***********************/
+/***********************  Auth routes       ***********************/
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
-
+Route::group(['prefix' => '/oauth'], function() {
+  Route::get('/facebook', 'Auth\OAuthController@facebook');
+  Route::get('/google', 'Auth\OAuthController@google');
+});
+/***********************  Resource routes   ***********************/
 Route::resource('events', 'EventController', 
                 ['except'   =>  ['create', 'store', 'update', 'destroy']]);
 Route::resource('events', 'EventController', 

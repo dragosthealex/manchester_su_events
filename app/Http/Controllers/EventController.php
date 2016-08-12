@@ -26,7 +26,7 @@ class EventController extends Controller
                    ->with('cover')
                    ->with('tags')
                    ->with('category')
-                   ->all();
+                   ->get();
 
     return view('events.index')
               ->with('events', $events);

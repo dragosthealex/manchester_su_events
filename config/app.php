@@ -154,6 +154,7 @@ return [
          * External Packages Providers...
          */
         Artdarek\OAuth\OAuthServiceProvider::class,
+        Krucas\Notification\NotificationServiceProvider::class,
 
     ],
 
@@ -209,7 +210,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         
-        'OAuth'     => Artdarek\OAuth\Facade\OAuth::class,
+        'OAuth'         => Artdarek\OAuth\Facade\OAuth::class,
+        'Notification'  => Krucas\Notification\Facades\Notification::class,
+        'Site'          => Helpers\SiteHelper::class,  
     ],
 
 ];

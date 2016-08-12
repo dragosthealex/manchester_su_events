@@ -327,7 +327,20 @@ a.link-dark:hover {
 .navbar-custom.top-nav-collapse .navbar-brand img {
   height: 40px;
 }
-
+.nav .open>a, 
+.nav .open>a:focus, 
+.nav .open>a:hover {
+  background-color: transparent;
+}
+.navbar-nav>li>.dropdown-menu {
+  background: #670567;
+}
+.navbar-nav>li>.dropdown-menu > li > a {
+  padding: 5px 10px;
+}
+.navbar-custom.top-nav-collapse .nav li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 /* /nav */
 
 /* footer */

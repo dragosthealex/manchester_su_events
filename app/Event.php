@@ -51,7 +51,7 @@ class Event extends Model
      */
     public function tags() {
 
-        return $this->belongsToMany('App\Tag', 'events_tag', 'event_id', 'tag_id');
+        return $this->belongsToMany('App\Tag', 'event_tags', 'event_id', 'tag_id');
     }
 
     /**

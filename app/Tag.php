@@ -8,6 +8,13 @@ class Tag extends Model
 {
 
     /**
+     * Name of the table.
+     *
+     * @var bool
+     */
+    public $table = 'tags';
+
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
