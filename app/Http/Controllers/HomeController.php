@@ -15,6 +15,6 @@ class HomeController extends Controller {
 	public function index()
 	{
 		return view('pages.home')
-					->with('events', Event::all());
+					->with('events', Event::whereDate('date_start', '>', date('Y-m-d'))->get());
 	}
 }

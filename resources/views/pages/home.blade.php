@@ -227,6 +227,7 @@ header.intro {
 
 @section('scripts')
 <script>
+
 $(document).ready(function() {
   var init = function() {
     $("header.intro").vegas({
