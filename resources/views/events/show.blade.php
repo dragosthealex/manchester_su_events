@@ -63,10 +63,14 @@
       </div>
     </div>
     <div class="row">
+      @if($event->getOriginal('cover'))
       <div class="col-md-8">
         <div class="event-cover"></div>
       </div>
       <div class="col-md-4">
+      @else
+      <div class="col-sm-12">
+      @endif
         <h3 class="event-subtitle"><?=$event->subtitle?></h3>
         <h4 class="event-date"><a><?=date('l, j F Y', strtotime($event->date_start))?></a></h4>
         <p class="event-description">
@@ -146,19 +150,19 @@ $(document).ready(function() {
   function initMap() {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
-      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address?$event->location_address:$event->location_name))?>"
+      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address?$event->location_address:$event->location_name.' Manchester, UK'))?>"
     }, function(results, status) {
-      var myOptions = {
-            zoom: 8,
-            center: {lat: '53.4651813', lng:'-2.2325923'},
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
+
+      var location_coords = {lat: '53.4651813', lng:'-2.2325923'};
+
       if (status == google.maps.GeocoderStatus.OK) {
-        myOptions = {
-            zoom: 8,
-            center: results[0].geometry.location,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
+        location_coords = results[0].geometry.location;
+      }
+
+      myOptions = {
+          zoom: 8,
+          center: location_coords,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       // Create map
       map = new google.maps.Map(document.getElementById("the-map"), myOptions);
@@ -166,7 +170,7 @@ $(document).ready(function() {
       // Create marker
       var marker = new google.maps.Marker({
           map: map,
-          position: results[0].geometry.location
+          position: location_coords
       });
     });
   }

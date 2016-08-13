@@ -76,6 +76,10 @@ header.intro {
 }
 #events .event-wrapper .card .front {
   z-index: 2!important;
+  display: none;
+}
+#events .event-wrapper .card.flip .front {
+  display: block;
 }
 #events .event-wrapper .card .front .card-title {
 
@@ -200,7 +204,7 @@ header.intro {
         <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
-          <div class="card has-cover event-card">
+          <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
             <div class="front">
               <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
               <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
@@ -264,7 +268,7 @@ $(document).ready(function() {
      });
      $("#events .events-container").mixItUp();
      $("#events .events-container").mixItUp('sort', 'date:asc');
-     $("#events .card").flip();
+     $("#events .card.flip").flip();
   }
 
   init();

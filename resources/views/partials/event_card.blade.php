@@ -1,5 +1,5 @@
 <div class="card has-cover event-card">
-  <img class="img-responsive card-cover" src="http://placehold.it/1280x720" alt=""/>
+  <img class="img-responsive card-cover" src="<?=$event->cover?>" alt=""/>
   <div class="card-content">
     <div class="card-body">
       <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
