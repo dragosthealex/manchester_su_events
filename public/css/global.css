@@ -325,6 +325,7 @@ a.link-dark:hover {
   padding-top: 16px;
   padding-bottom: 16px;
 }
+.navbar-nav>li>.dropdown-menu > li > a:hover,
 .navbar-custom.top-nav-collapse .nav li a:hover {
   color: #ffff86;
 }
@@ -354,8 +355,10 @@ a.link-dark:hover {
 }
 .navbar-nav>li>.dropdown-menu > li > a {
   padding: 5px 10px;
+  color: #fefefe;
 }
-.navbar-custom.top-nav-collapse .nav li a:hover {
+.navbar-custom.top-nav-collapse .nav li a:hover,
+.navbar-nav>li>.dropdown-menu > li > a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 /* /nav */
