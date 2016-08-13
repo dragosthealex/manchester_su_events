@@ -83,7 +83,7 @@
           @if($event->getOriginal('price'))
           <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
-          <a target="_blank" class="btn btn-primary" href="http://maps.google.com/?q=<?=trim(preg_replace('/\s+/', ' ', $event->location_address))?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+          <a target="_blank" class="btn btn-primary"  href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>
       </div>
     </div>
@@ -148,19 +148,14 @@
 <script>
 $(document).ready(function() {
   function initMap() {
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-      'address': "<?=trim(preg_replace('/\s+/', ' ', ($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'))?>"
-    }, function(results, status) {
 
-      var location_coords = {lat: '53.4651813', lng:'-2.2325923'};
+      var location_coords = {lat: 53.4651813, lng:-2.2325923};
 
-      if (status == google.maps.GeocoderStatus.OK) {
-        location_coords = results[0].geometry.location;
-      }
-
+      @if($event->lat && $event->lng)
+        location_coords = {lat: <?=$event->lat?>, lng:<?=$event->lng?>}
+      @endif
       myOptions = {
-          zoom: 8,
+          zoom: 14,
           center: location_coords,
           mapTypeId: google.maps.MapTypeId.ROADMAP
       }
@@ -172,7 +167,6 @@ $(document).ready(function() {
           map: map,
           position: location_coords
       });
-    });
   }
   initMap();
 });

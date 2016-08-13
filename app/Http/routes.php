@@ -44,3 +44,9 @@ Route::group(['prefix' => 'api'], function() {
   Route::resource('categories', 'Api\CategoryController',
                  ['only'  =>  ['index', 'show']]);
 });
+
+Route::get('test', function() {
+  factory(App\Event::class, 'test')->create([
+    'location_address' => "Students' Union"
+  ]);
+});

@@ -227,13 +227,13 @@ header.intro {
           <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
             <div class="front">
               <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
-              <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+              <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
             <div class="back">
               <div class="card-content">
                 <div class="card-body">
-                  <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+                  <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
                   <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
                   <p class="card-description">
                     @if(strlen($event->description) > 100)
@@ -251,7 +251,7 @@ header.intro {
                   @if($event->getOriginal('price'))
                     <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
-                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
