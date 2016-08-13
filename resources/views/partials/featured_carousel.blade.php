@@ -1,5 +1,4 @@
 <!-- carousel for medium & large devices -->
-<?php $featured_events = $events->filter(function($event){return $event->featured; }); ?>
 <div id="featured-carousel-xl" class="featured-carousel carousel slide visible-xl"> 
   <!-- Indicators -->
   <ol class="carousel-indicators">

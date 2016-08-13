@@ -20,7 +20,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Event::class, function (Faker\Generator $faker) {
+$factory->defineAs(App\Event::class, 'test', function (Faker\Generator $faker) {
     return [
         'title'             =>  str_random(10),
         'description'       =>  $faker->text,
@@ -35,6 +35,11 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'tickets_link'      =>  $faker->url,
         'society_id'        =>  (rand(0,1) ? App\Society::orderByRaw('RAND()')->first()->id : NULL),
         'category_id'       =>  App\Category::orderByRaw('RAND()')->first()->id,
+    ];
+});
+$factory->defineAs(App\Event::class, 'welcome_week', function (Faker\Generator $faker) {
+    return [
+        'price'             =>  0,
     ];
 });
 

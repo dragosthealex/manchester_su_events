@@ -150,7 +150,7 @@ $(document).ready(function() {
   function initMap() {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
-      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address?$event->location_address:$event->location_name.' Manchester, UK'))?>"
+      'address': "<?=trim(preg_replace('/\s+/', ' ', ($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'))?>"
     }, function(results, status) {
 
       var location_coords = {lat: '53.4651813', lng:'-2.2325923'};

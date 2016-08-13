@@ -55,6 +55,19 @@ header.intro {
 #events .event-wrapper .card .card-body {
   height: 240px;
 }
+#events .event-wrapper .card .card-body .card-title {
+  position: static;
+  margin-bottom: 5px;
+  margin-top: 0;
+  white-space: normal;
+}
+#events .event-wrapper .card .card-body .card-title a {
+  color: #333;
+  text-shadow: 1px 1px 1px rgb(243, 243, 5);
+}
+#events .event-wrapper .card .card-body .card-date {
+  margin-bottom: 5px;
+}
 #events .event-wrapper .card .card-cover {
   background-repeat: no-repeat;
   background-position: center;
@@ -102,7 +115,7 @@ header.intro {
   background-color: transparent;
 }
 #events .card.event-card .card-description {
-  height: 100px;
+  height: 60px;
   margin-bottom: 20px;
 }
 #events .event-card .card-content {
@@ -174,7 +187,14 @@ header.intro {
   </div>
   <div class="row">
     <div class="col-xs-12">
-      @include('partials.featured_carousel')
+      <?php $featured_events = $events->filter(function($event){return $event->featured; }); ?>
+      @if(count($featured_events))
+        @include('partials.featured_carousel', ['featured_events'=>$featured_events])
+      @else
+        <p>
+          Currently there are no featured events / wristband events.
+        </p>
+      @endif
     </div>
   </div>
 </section>
@@ -213,10 +233,11 @@ header.intro {
             <div class="back">
               <div class="card-content">
                 <div class="card-body">
+                  <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
                   <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
                   <p class="card-description">
-                    @if(strlen($event->description) > 150)
-                      <?=substr($event->description, 0, 150)?>... <a href="{{ url('events/' . $event->id) }}">More</a>
+                    @if(strlen($event->description) > 100)
+                      <?=substr($event->description, 0, 100)?>... <a href="{{ url('events/' . $event->id) }}">More</a>
                     @else
                       <?=$event->description?>
                     @endif
@@ -227,8 +248,10 @@ header.intro {
                 </div>
                 <hr>
                 <div class="card-footer">
-                  <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
-                  <a class="card-action" href="#">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  @if($event->getOriginal('price'))
+                    <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                  @endif
+                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>

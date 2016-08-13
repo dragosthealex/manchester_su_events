@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Societies table seeded with 10 random societies.');
         $this->call(CategoriesTableSeeder::class);
         $this->command->info('Categories table seeded with 10 random categories.');
-        $this->call(EventsTableSeeder::class);
-        $this->command->info('Events table seeded with 40 random events');
+        // $this->call(EventsTableSeeder::class);
+        // $this->command->info('Events table seeded with 40 random events');
         $this->call(WelcomeWeekEventsSeeder::class);
-        $this->command->inf('Seeded the welcome week events');
+        $this->command->info('Seeded the welcome week events');
         
         Model::reguard();
     }

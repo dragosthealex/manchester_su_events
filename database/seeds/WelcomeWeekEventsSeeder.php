@@ -11,7 +11,7 @@ class WelcomeWeekEventsSeeder extends Seeder
    */
   public function run()
   {
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-15",
       "time_start"        =>  "11:00",
       "time_end"          =>  "17:00",
@@ -19,7 +19,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_address"  =>  "Students' Union",
       "location_name"     =>  "Students' Union foyer",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-15",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -27,7 +27,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-15",
       "time_start"        =>  "17:00",
       "time_end"          =>  "18:30",
@@ -35,7 +35,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-15",
       "time_start"        =>  "18:30",
       "time_end"          =>  "20:30",
@@ -43,7 +43,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-16",
       "time_start"        =>  "11:00",
       "time_end"          =>  "17:00",
@@ -51,7 +51,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-16",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -59,7 +59,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-16",
       "time_start"        =>  "19:00",
       "time_end"          =>  "21:00",
@@ -67,7 +67,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Club Academy, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-17",
       "time_start"        =>  "11:00",
       "time_end"          =>  "17:00",
@@ -75,7 +75,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-17",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -83,7 +83,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-17",
       "time_start"        =>  "21:00",
       "time_end"          =>  "2:00",
@@ -91,7 +91,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-18",
       "time_start"        =>  "11:00",
       "time_end"          =>  "17:00",
@@ -99,7 +99,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-18",
       "time_start"        =>  "14:00",
       "time_end"          =>  "18:00",
@@ -107,7 +107,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-18",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -115,7 +115,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-19",
       "time_start"        =>  "8:00",
       "time_end"          =>  "16:30",
@@ -123,7 +123,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8, Students’ Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-19",
       "time_start"        =>  "12:00",
       "time_end"          =>  "15:00",
@@ -131,7 +131,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-19",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -139,7 +139,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-19",
       "time_start"        =>  "17:00",
       "time_end"          =>  "18:30",
@@ -147,7 +147,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-19",
       "time_start"        =>  "18:00",
       "time_end"          =>  "20:00",
@@ -155,7 +155,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
       "time_start"        =>  "8:00",
       "time_end"          =>  "18:00",
@@ -163,7 +163,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
       "time_start"        =>  "10:00",
       "time_end"          =>  "16:00",
@@ -171,7 +171,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
       "time_start"        =>  "12:00",
       "time_end"          =>  "15:00",
@@ -179,7 +179,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -187,7 +187,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 3, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
       "time_start"        =>  "17:00",
       "time_end"          =>  "18:30",
@@ -195,7 +195,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "8:00",
       "time_end"          =>  "12:30",
@@ -203,7 +203,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "14:30",
       "time_end"          =>  "18:00",
@@ -211,7 +211,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "10:00",
       "time_end"          =>  "16:00",
@@ -219,7 +219,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "12:00",
       "time_end"          =>  "15:00",
@@ -227,7 +227,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "13:00",
       "time_end"          =>  "14:30",
@@ -235,7 +235,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -243,7 +243,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 3, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -251,7 +251,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Renold Building, C16",
       "location_address"  =>  "Renold Building",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
       "time_start"        =>  "17:00",
       "time_end"          =>  "18:30",
@@ -259,7 +259,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers. Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "8:00",
       "time_end"          =>  "12:30",
@@ -267,7 +267,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "14:30",
       "time_end"          =>  "16:30",
@@ -275,7 +275,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8 ,Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "10:00",
       "time_end"          =>  "16:00",
@@ -283,7 +283,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Manchester Academy",
       "location_address"  =>  "Manchester Academy",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "11:00",
       "time_end"          =>  "",
@@ -291,7 +291,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "12:00",
       "time_end"          =>  "15:00",
@@ -299,7 +299,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "12:30",
       "time_end"          =>  "14:30",
@@ -307,7 +307,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "13:00",
       "time_end"          =>  "14:30",
@@ -315,7 +315,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "17:00",
       "time_end"          =>  "18:30",
@@ -323,7 +323,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Room 8, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -331,7 +331,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union (68)",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "10:00",
       "time_end"          =>  "16:00",
@@ -339,7 +339,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "12:00",
       "time_end"          =>  "",
@@ -347,7 +347,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "13:30",
       "time_end"          =>  "",
@@ -355,7 +355,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "15:00",
       "time_end"          =>  "",
@@ -363,7 +363,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "12:00",
       "time_end"          =>  "15:00",
@@ -371,7 +371,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union foyer",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "17:00",
       "time_end"          =>  "",
@@ -379,7 +379,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Council Chambers, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
       "time_start"        =>  "19:00",
       "time_end"          =>  "3:00",
@@ -387,7 +387,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "20:00",
       "time_end"          =>  "5:00",
@@ -395,7 +395,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "18:00",
       "time_end"          =>  "20:00",
@@ -403,7 +403,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class)->create([
+    factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "14:00",
       "time_end"          =>  "15:30",
