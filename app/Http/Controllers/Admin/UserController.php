@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.users.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create_edit');
     }
 
     /**

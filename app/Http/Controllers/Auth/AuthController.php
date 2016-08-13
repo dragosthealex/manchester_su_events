@@ -62,4 +62,20 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Redirects user after authentication
+     *
+     * @param Illuminate\Http\Request
+     * @param App\User
+     * @return Illuminate\Http\Response
+     */
+    public function authenticated($request, $user) 
+    {
+        if($user->admin) {
+            return redirect()->to('admin/users');
+        } else {
+            return redirect()->to('events');
+        }
+    }
 }

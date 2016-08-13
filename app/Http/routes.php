@@ -27,14 +27,15 @@ Route::resource('events', 'EventController',
 /***********************  Admin routes      ***********************/
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 
-    // Admin Dashboard
-    Route::get('dashboard', 'Admin\DashboardController@index');
+    Route::get('dashboard', function() {
+      return redirect()->to('/admin/users');
+    });
     // Photos
-    Route::resource('photo', 'Admin\PhotoController');
+    Route::resource('photos', 'Admin\PhotoController');
     // Users
-    Route::resource('user', 'Admin\UserController');
+    Route::resource('users', 'Admin\UserController');
     // Categories
-    Route::resource('category', 'Admin\CategoryController');
+    Route::resource('categories', 'Admin\CategoryController');
 });
 
 /***********************  Api routes    ****************************/
