@@ -403,6 +403,14 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
+    factory(App\Event::class)->create([
+      "date_start"        =>  "2016-09-22",
+      "time_start"        =>  "14:00",
+      "time_end"          =>  "15:30",
+      "title"             =>  "Living at Home Students Speed Meet",
+      "location_name"     =>  "Council Chambers, Students' Union",
+      "location_address"  =>  "Students' Union",
+    ]);
     
   }
 }
