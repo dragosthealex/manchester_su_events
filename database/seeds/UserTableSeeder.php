@@ -22,6 +22,7 @@ class UserTableSeeder extends Seeder {
 			'username' => 'test_user',
 			'email' => 'user@user.com',
 			'password' => bcrypt('user'),
+			'can_post_events' => 1
 			'confirmed' => 1,
 			'confirmation_code' => md5(microtime() . env('APP_KEY')),
 		]);

@@ -146,11 +146,11 @@ $(document).ready(function() {
   function initMap() {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
-      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address))?>"
+      'address': "<?=trim(preg_replace('/\s+/', ' ', $event->location_address?$event->location_address:$event->location_name))?>"
     }, function(results, status) {
       var myOptions = {
             zoom: 8,
-            center: {lat: '53.466708', lng:'-2.234449'},
+            center: {lat: '53.4651813', lng:'-2.2325923'},
             mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       if (status == google.maps.GeocoderStatus.OK) {
