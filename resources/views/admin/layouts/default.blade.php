@@ -9,6 +9,7 @@
 
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="{{ asset('js/site.js') }}"></script>
     <script>
     //Global vars
@@ -27,6 +28,7 @@
 </div>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="{{ asset('lib/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script>
   $(document).ready(function() {
     @if(count(Notification::all()->all()))
@@ -40,6 +42,7 @@
   @endif
   });
 </script>
+<script src="{{ asset('js/global.js') }}"></script>
 @yield('scripts')
 </body>
 </html>

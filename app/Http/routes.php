@@ -17,12 +17,7 @@ Route::group(['prefix' => '/oauth'], function() {
   Route::get('/google', 'Auth\OAuthController@google');
 });
 /***********************  Resource routes   ***********************/
-Route::resource('events', 'EventController', 
-                ['except'   =>  ['create', 'store', 'update', 'destroy']]);
-Route::resource('events', 'EventController', 
-                          ['middleware'  =>  'EventModeratorMiddleware',
-                           'only'        =>  ['create', 'store', 'update', 'destroy']
-                          ]);
+Route::resource('events', 'EventController');
 
 /***********************  Admin routes      ***********************/
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
@@ -36,6 +31,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('users', 'Admin\UserController');
     // Categories
     Route::resource('categories', 'Admin\CategoryController');
+    // Events
+    Route::resource('events', 'Admin\EventController');
 });
 
 /***********************  Api routes    ****************************/

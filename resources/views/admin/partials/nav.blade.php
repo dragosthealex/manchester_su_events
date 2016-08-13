@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('admin/events') }}">
                         <i class="glyphicon glyphicon-bullhorn"></i> Events
                     </a>
                 </li>
