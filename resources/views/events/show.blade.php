@@ -108,7 +108,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
     <div class="slides"></div>

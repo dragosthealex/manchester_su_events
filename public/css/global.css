@@ -52,9 +52,20 @@ a {
 .parallax-window {
   position: absolute;
 }
+.btn, .navbar-custom, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat',Arial,sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 section.content-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+section.content-section:first-child {
   padding-top: 70px;
+}
+section.content-section:last-child {
   padding-bottom: 50px;
 }
 section.content-section:first-child {
@@ -175,9 +186,11 @@ section .row.inside-bar {
 .page-header h1 {
   font-family: 'snack_patrol';
   letter-spacing: 3px;
+  margin-left: 16px;
 }
 .page-header h3 {
   font-family: 'baumans';
+  margin-left: 16px;
 }
 /* /content */
 
@@ -202,6 +215,9 @@ a.link-dark:hover {
   text-align: center;
   font-family: 'baumans';
 }
+.text-primary {
+  color: #710671;
+}
 /* /misc */
 
 /* forms */
@@ -218,6 +234,7 @@ a.link-dark:hover {
   background-color: rgba(113, 6, 113, 0.8);
   background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
   color: rgb(243, 243, 5);
+  border: 1px solid rgba(113, 6, 113, 1);
 }
 .btn-primary:active,
 .btn-primary.active {
@@ -225,7 +242,8 @@ a.link-dark:hover {
   background-color: rgba(113, 6, 113, 0.8);
 }
 .btn-primary.active:hover,
-.btn-primary:active:hover {
+.btn-primary:active:hover,
+.btn-primary.focus, .btn-primary:focus {
   background-color: rgba(113, 6, 113, 1);
 }
 .btn-social {
@@ -382,6 +400,95 @@ a.link-dark:hover {
 
 /* /footer */
 
+/* events */
+#events .event-wrapper {
+  margin-bottom: 6px;
+}
+#events .event-wrapper .card {
+  height: 300px;
+}
+#events .event-wrapper .card .card-body {
+  height: 240px;
+}
+#events .event-wrapper .card .card-body .card-title {
+  position: static;
+  margin-bottom: 5px;
+  margin-top: 0;
+  white-space: normal;
+}
+#events .event-wrapper .card .card-body .card-title a {
+  color: #333;
+  text-shadow: 1px 1px 1px rgb(243, 243, 5);
+}
+#events .event-wrapper .card .card-body .card-date {
+  margin-bottom: 5px;
+}
+#events .event-wrapper .card .card-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: 0,0;
+  background-size: cover;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: inset 0 -50px 200px -50px #000;
+  -moz-box-shadow: inset 0 -50px 200px -50px #000;
+  box-shadow: inset 0 -50px 200px -50px #000;
+}
+#events .event-wrapper .card .card-cover:hover {
+  -webkit-box-shadow: inset 0 -50px 200px -10px #000;
+  -moz-box-shadow: inset 0 -50px 200px -10px #000;
+  box-shadow: inset 0 -50px 200px -10px #000;
+}
+#events .event-wrapper .card .front {
+  z-index: 2!important;
+  display: none;
+}
+#events .event-wrapper .card.flip .front {
+  display: block;
+}
+#events .event-wrapper .card .front .card-title {
+
+}
+#events .event-wrapper .card .front .card-date {
+  bottom: 0;
+  position: absolute;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 16px;
+}#events .event-wrapper .card .front .card-date a {
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+#events .event-wrapper.mix {
+  display: none;
+  padding: 0 1px;
+}
+#events .event-card {
+  background-color: transparent;
+}
+#events .card.event-card .card-description {
+  height: 60px;
+  margin-bottom: 20px;
+}
+#events .event-card .card-content {
+  background-color: #fefefe;
+}
+#events .event-card .card-title {
+  bottom: 0;
+  top: auto;
+  margin-left: 20px;
+}
+#events .event-card .card-details {
+  font-size: 15px;
+  font-weight: bold;
+}
+#events .event-card .card-subtitle {
+  display: none;
+}
+/* /events */
 /* media queries */
 @media(min-width: 768px) {
   section {

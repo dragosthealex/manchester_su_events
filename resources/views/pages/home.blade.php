@@ -10,6 +10,10 @@
 header.intro {
   height: 100%;
 }
+section.home-section {
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
 .navbar-custom {
   background-color: transparent; 
   padding: 20px 0; 
@@ -46,93 +50,7 @@ header.intro {
 .featured-carousel .carousel-indicators {
   bottom: -50px;
 }
-#events .event-wrapper {
-  margin-bottom: 6px;
-}
-#events .event-wrapper .card {
-  height: 300px;
-}
-#events .event-wrapper .card .card-body {
-  height: 240px;
-}
-#events .event-wrapper .card .card-body .card-title {
-  position: static;
-  margin-bottom: 5px;
-  margin-top: 0;
-  white-space: normal;
-}
-#events .event-wrapper .card .card-body .card-title a {
-  color: #333;
-  text-shadow: 1px 1px 1px rgb(243, 243, 5);
-}
-#events .event-wrapper .card .card-body .card-date {
-  margin-bottom: 5px;
-}
-#events .event-wrapper .card .card-cover {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-origin: 0,0;
-  background-size: cover;
-  height: 100%;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-box-shadow: inset 0 -50px 200px -50px #000;
-  -moz-box-shadow: inset 0 -50px 200px -50px #000;
-  box-shadow: inset 0 -50px 200px -50px #000;
-}
-#events .event-wrapper .card .card-cover:hover {
-  -webkit-box-shadow: inset 0 -50px 200px -10px #000;
-  -moz-box-shadow: inset 0 -50px 200px -10px #000;
-  box-shadow: inset 0 -50px 200px -10px #000;
-}
-#events .event-wrapper .card .front {
-  z-index: 2!important;
-  display: none;
-}
-#events .event-wrapper .card.flip .front {
-  display: block;
-}
-#events .event-wrapper .card .front .card-title {
 
-}
-#events .event-wrapper .card .front .card-date {
-  bottom: 0;
-  position: absolute;
-  font-size: 16px;
-  margin-bottom: 10px;
-  margin-left: 16px;
-}#events .event-wrapper .card .front .card-date a {
-  color: #fff;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-#events .event-wrapper.mix {
-  display: none;
-  padding: 0 1px;
-}
-#events .event-card {
-  background-color: transparent;
-}
-#events .card.event-card .card-description {
-  height: 60px;
-  margin-bottom: 20px;
-}
-#events .event-card .card-content {
-  background-color: #fefefe;
-}
-#events .event-card .card-title {
-  bottom: 0;
-  top: auto;
-  margin-left: 20px;
-}
-#events .event-card .card-details {
-  font-size: 15px;
-  font-weight: bold;
-}
-#events .event-card .card-subtitle {
-  display: none;
-}
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;
@@ -171,7 +89,7 @@ header.intro {
   </div>
 </header>
 <!-- Featured Events Section -->
-<section id="featured" class="container-fluid content-section text-center scrollable-section">
+<section id="featured" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">Wristbands</h1>
@@ -199,7 +117,7 @@ header.intro {
   </div>
 </section>
 <!-- All Events Section -->
-<section id="events" class="container-fluid content-section text-center scrollable-section">
+<section id="events" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">All Events</h1>
