@@ -6,12 +6,12 @@
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css') }}">
 <style type="text/css">
-/*.event-header {
+.event-header {
   text-align: center;
 }
 .event-header h2 {
   font-size: 80px;
-}*/
+}
 .calendar-wrapper {
   height: 44px;
   overflow: hidden;
@@ -25,6 +25,7 @@
 #month-select option {
   text-align: center;
 }
+
 ul.calendar {
   margin: 0;
   padding: 0;
@@ -75,7 +76,23 @@ a.days-scroll:hover {
 #days-right {
   right: -20px;
 }
-
+@media(max-width: 768px) {
+  #calendar-controls-section .inside-bar {
+    margin: 0 -15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #events-calendar-section {
+    padding-top: 10px;
+  }
+  .event-header {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .event-header h2 {
+    font-size: 45px;
+  }
+}
 </style>
 @endsection
 
@@ -84,7 +101,7 @@ a.days-scroll:hover {
   <div class="container">
     <div class="row">
       <div class="page-header event-header">
-        <h2>Calendar</h2>
+        <h2 id="page-header"><?=date('l')?> Events</h2>
       </div>
     </div>
   </div>
@@ -206,12 +223,18 @@ $(document).ready(function() {
   calendar.dragScroll({});
 
   // Initialise calendar
-  $("#events .events-container").mixItUp();
   var day = $($("#calendar li.active")[0]).find("a").html(),
       month = $("#month-select").val();
-  console.log('.date-' + day + '-' + month);
-  $("#events .events-container").mixItUp('filter', '.date-' + day + '-' + month);
+  $("#events .events-container").mixItUp({
+    load: {
+      filter: '.date-' + day + '-' + month
+    }    
+  });
+  // $("#events .events-container").mixItUp('filter', '.date-' + day + '-' + month);
   $("#events .events-container").mixItUp('sort', 'date:asc');
+  $("#events .events-container").on("mixStart", function(e, state) {
+    $("#no-events-msg").hide();
+  });
   $("#events .events-container").on("mixEnd", function(e, state) {
     if(!state.totalShow) {
       $("#no-events-msg").show();
@@ -223,6 +246,8 @@ $(document).ready(function() {
   $("#events .card.flip").flip();
 
   // Scroll on hover
+  // Initialise scroll so that you can see the date
+  calendar.scrollLeft(calendar.scrollLeft() + 45*parseInt($($("#calendar li.active")[0]).find("a").html()));
   $('#days-left').hover(function () {
     var intervalDelay = 20;
     intervalId = setInterval(scrollLeft, intervalDelay);
@@ -260,11 +285,13 @@ $(document).ready(function() {
   $("#calendar li").click(function(e) {
     var li = $(this),
         day = li.find("a").html(),
-        month = $("#month-select").val();
+        month = $("#month-select").val(),
+        date = new Date(month.split("-")[0] + ' ' + day + ', ' + month.split("-")[1]);
 
     $("#calendar li.active").removeClass("active");
     li.addClass("active");
     $("#events .events-container").mixItUp('filter', '.date-' + day + '-' + month);
+    $("#page-header").html(["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] + ' Events');
   });
 });
 </script>

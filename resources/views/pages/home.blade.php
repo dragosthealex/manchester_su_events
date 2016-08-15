@@ -40,8 +40,6 @@ section.home-section {
   transition: 0.6s;
 }
 .intro .intro-body .intro-text {
-  /*font-family: 'baumans';*/
-  /*color: #ffff86;*/
   font-family: 'snack_patrol';
   color: #e6e68a;
   letter-spacing: 4px;
@@ -54,6 +52,9 @@ section.home-section {
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 25px;
   }
   .navbar-custom {
     background: transparent;
@@ -139,7 +140,7 @@ section.home-section {
   <div class="row">
     <div class="span-12 events-container">
       @foreach($events as $event)
-        <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
@@ -216,6 +217,7 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     init();
+    console.log("sheeet");
   });
   
   $(window).bind('scroll', function(e){

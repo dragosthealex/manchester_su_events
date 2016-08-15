@@ -50,6 +50,9 @@
   .event-subtitle {
     margin-top: 30px;
   }
+  .event-header h2 {
+    font-size: 45px;
+  }
 }
 </style>
 @endsection

@@ -475,6 +475,7 @@ a.link-dark:hover {
 }
 #events .event-card .card-content {
   background-color: #fefefe;
+  border-radius: 5px;
 }
 #events .event-card .card-title {
   bottom: 0;
@@ -537,6 +538,20 @@ a.link-dark:hover {
   }
   #footer > .container > .row > .col-sm-6 {
     text-align: center;
+  }
+  #events {
+    min-height: 300px;
+  }
+  #events .event-wrapper .card,
+  #events .card.event-card .card-body {
+    height: auto;
+  }
+  #events .card.event-card .card-description {
+    display: none;
+  }
+  #events .card .card-content .card-body .card-date, .event-date a {
+    text-align: left;
+    margin-bottom: 10px;
   }
 }
 @media(min-width: 1500px) {
