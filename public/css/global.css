@@ -120,7 +120,7 @@ section .row.inside-bar {
   text-align: left;
 }
 .card.has-cover .card-title a {
-  font-family: 'baumans';
+  font-family: 'solano_bold';
   color: rgb(243, 243, 5);
   text-shadow: 2px 2px 2px #710671;
   text-transform: capitalize;
@@ -128,7 +128,7 @@ section .row.inside-bar {
 }
 .card.has-cover .card-content .card-body .card-subtitle,
 .event-subtitle {
-  font-family: 'baumans';
+  font-family: 'gotham';
   text-align: center;
   color: green;
   font-size: 25px;
@@ -222,7 +222,7 @@ a.link-dark:hover {
   font-size: 20px;
   color: #555;
   text-align: center;
-  font-family: 'baumans';
+  font-family: 'gotham';
 }
 .text-primary {
   color: #710671;
