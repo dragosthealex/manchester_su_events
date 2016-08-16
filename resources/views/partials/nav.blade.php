@@ -22,6 +22,7 @@
         <li>
           <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
         </li>
+        @if(false)
         @if (Auth::guest())
           <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ url('auth/login') }}"><i
             class="fa fa-sign-in"></i> Login</a>
@@ -53,6 +54,7 @@
                 </li>
               </ul>
             </li>
+        @endif
         @endif
       </ul>
     </div>
