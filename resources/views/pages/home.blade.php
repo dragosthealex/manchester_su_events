@@ -94,7 +94,9 @@ section.home-section {
 </header>
 <section id="featured-wide" class="container-fluid text-center scrollable-section">
   <div class="row">
-    <img class="img-responsive" src="{{ asset('img/bg/wristband_slider.jpg') }}" id="featured-slider">
+    <a target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083" title="Buy the Welcome Week Wristband now!">
+      <img class="img-responsive" src="{{ asset('img/bg/wristband_slider.jpg') }}" id="featured-slider">
+    </a>
   </div>
 </section>
 <!-- Featured Events Section -->
@@ -108,7 +110,8 @@ section.home-section {
       <p class="section-text">
         Explore Manchester and start making new friends with an Official Welcome
         Week wristband. For only £55 (inc. booking fee) you will gain entry into all of
-        the events below.
+        the events below.<br><br>
+        <a class="btn btn-primary" target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083">Buy Welcome Week Wristband</a>
       </p>
     </div>
   </div>
