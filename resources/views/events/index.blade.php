@@ -265,9 +265,11 @@ $(document).ready(function() {
   $("#month-select").change(function(e) {
     var vall = $(this).val(),
         days = $("#calendar li"),
-        day = $($("#calendar li.active")[0]).find("a").html();
+        day = $($("#calendar li.active")[0]).find("a").html(),
+        date = new Date(vall.split("-")[0] + ' ' + day + ', ' + vall.split("-")[1]);
 
     $("#events .events-container").mixItUp('filter', '.date-' + day + '-' + vall);
+    $("#page-header").html(["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] + ' Events');
 
     if(vall.split("-")[0] == "Sep" || vall.split("-")[0] == "Nov" || vall.split("-")[0] == "Jun" || vall.split("-")[0] == "Apr") {
       $(days[30]).css("display", "none");
