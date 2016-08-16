@@ -22,8 +22,8 @@ class EventController extends Controller
   public function index() {
     
     $events = Event::with('author')
-                   ->with('photos')
-                   ->with('cover')
+                   /*->with('photos')*/
+                   /*->with('cover')*/
                    ->with('tags')
                    ->with('category')
                    ->get();

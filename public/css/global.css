@@ -20,9 +20,17 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'gotham';
+  src: url('../fonts/gotham.woff2') format('woff2'),
+       url('../fonts/gotham.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
 /* global stuff */
 html {
   background-color: #efefef;
+  font-family: 'Montserrat',Arial,sans-serif;
 }
 body {
   color: #333;
@@ -72,10 +80,10 @@ section.content-section:first-child {
   padding-top: 0;
 }
 section.content-section .section-title {
-  font-family: 'snack_patrol';
+  font-family: 'gotham';
   color: rgba(113, 6, 113, 0.8);
   font-size: 70px;
-  letter-spacing: 10px;
+  text-transform: uppercase;
 }
 section.content-section .section-subtitle {
   font-family: 'baumans';
@@ -143,6 +151,10 @@ section .row.inside-bar {
   text-align: left;
   font-size: 15px;
   color: #555;
+  display: none;
+}
+.card .card-content .card-body .card-time  {
+  text-align: center;
 }
 .card .card-content .card-body .card-details,
 .event-details {
@@ -184,9 +196,9 @@ section .row.inside-bar {
 }
 .page-header h2,
 .page-header h1 {
-  font-family: 'snack_patrol';
   letter-spacing: 3px;
   margin-left: 16px;
+  text-transform: uppercase;
 }
 .page-header h3 {
   font-family: 'baumans';
@@ -552,6 +564,20 @@ a.link-dark:hover {
   #events .card .card-content .card-body .card-date, .event-date a {
     text-align: left;
     margin-bottom: 10px;
+  }
+  #events .card.flip .front {
+    display: none!important;
+  }
+  #events .card.flip .back {
+    transform: none!important; 
+    z-index: auto!important; 
+    backface-visibility: visible!important; 
+    transform-style: none!important; 
+    position: static!important; 
+    height: auto!important; 
+    width: auto!important; 
+    transition: none!important;
+    display: block!important; 
   }
 }
 @media(min-width: 1500px) {

@@ -120,9 +120,9 @@ a.days-scroll:hover {
               <option <?=date('M')=='Apr'?'selected="selected"':''?> value="Apr-<?=date('Y')?>">Apr&nbsp;<?=date('Y')?></option>
               <option <?=date('M')=='May'?'selected="selected"':''?> value="May-<?=date('Y')?>">May&nbsp;<?=date('Y')?></option>
               <option <?=date('M')=='Jun'?'selected="selected"':''?> value="Jun-<?=date('Y')?>">Jun&nbsp;<?=date('Y')?></option>
-              <option <?=date('M')=='Jul'?'selected="selected"':''?> value="Jul-<?=date('Y')?>">Jul&nbsp;<?=date('Y')?></option>
-              <option <?=date('M')=='Aug'?'selected="selected"':''?> value="Aug-<?=date('Y')?>">Aug&nbsp;<?=date('Y')?></option>
-              <option <?=date('M')=='Sep'?'selected="selected"':''?> value="Sep-<?=date('Y')?>">Sep&nbsp;<?=date('Y')?></option>
+              <option value="Jul-<?=date('Y')?>">Jul&nbsp;<?=date('Y')?></option>
+              <option value="Aug-<?=date('Y')?>">Aug&nbsp;<?=date('Y')?></option>
+              <option <?=in_array(date('M'),['Jul', 'Aug', 'Sep'])?'selected="selected"':''?> value="Sep-<?=date('Y')?>">Sep&nbsp;<?=date('Y')?></option>
               <option <?=date('M')=='Oct'?'selected="selected"':''?> value="Oct-<?=date('Y')?>">Oct&nbsp;<?=date('Y')?></option>
               <option <?=date('M')=='Nov'?'selected="selected"':''?> value="Nov-<?=date('Y')?>">Nov&nbsp;<?=date('Y')?></option>
               <option <?=date('M')=='Dec'?'selected="selected"':''?> value="Dec-<?=date('Y')?>">Dec&nbsp;<?=date('Y')?></option>
@@ -165,7 +165,7 @@ a.days-scroll:hover {
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
             <div class="front">
-              <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
+              <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
               <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
@@ -174,6 +174,7 @@ a.days-scroll:hover {
                 <div class="card-body">
                   <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
                   <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+                  <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
                   <p class="card-description">
                     @if(strlen($event->description) > 100)
                       <?=substr($event->description, 0, 100)?>... <a href="{{ url('events/' . $event->id) }}">More</a>

@@ -5,6 +5,7 @@
       <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
       <!-- <h4 class="card-subtitle">subtitle</h4> -->
       <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+      <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
       <p class="card-description">
         @if(strlen($event->description) > 200)
           <?=substr($event->description, 0, 200)?>... <a href="{{ url('events/' . $event->id) }}">More</a>

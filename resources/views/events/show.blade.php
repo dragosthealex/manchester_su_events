@@ -76,6 +76,7 @@
       @endif
         <h3 class="event-subtitle"><?=$event->subtitle?></h3>
         <h4 class="event-date"><a><?=date('l, j F Y', strtotime($event->date_start))?></a></h4>
+        <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
         <p class="event-description">
           <?=$event->description?>
         </p>
@@ -90,16 +91,18 @@
         </p>
       </div>
     </div>
-    @if(count($event->photos))
-    <div class="row">
-      <div class="col-sm-12 event-photos">
-        @foreach($event->photos as $photo)
-          <a class="col-md-3 col-sm-4 col-xs-6" href="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}" data-gallery>
-            <img class="img-responsive" src="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}">
-          </a>
-        @endforeach
+    @if(false)
+      @if(count($event->photos))
+      <div class="row">
+        <div class="col-sm-12 event-photos">
+          @foreach($event->photos as $photo)
+            <a class="col-md-3 col-sm-4 col-xs-6" href="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}" data-gallery>
+              <img class="img-responsive" src="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}">
+            </a>
+          @endforeach
+        </div>
       </div>
-    </div>
+      @endif
     @endif
   </div>
 </section>

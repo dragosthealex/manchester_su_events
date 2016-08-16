@@ -35,14 +35,17 @@ class Event extends Model
     }
 
     /**
+     * TODO: enable proper photo models
      * Get the photos of this event
      *
      * @return Eloquent\Relationship
      */
+    /*
     public function photos() {
 
         return $this->hasMany('App\Photo');
     }
+    */
 
     /**
      * Get the tags of this event
@@ -55,14 +58,17 @@ class Event extends Model
     }
 
     /**
+     * TODO: enable proper photo models
      * Get the cover of this event
      *
      * @return Eloquent\Relationship
      */
+    /*
     public function cover() {
 
         return $this->hasOne('App\Photo', 'event_cover');
     }
+    */
 
     /**
      * Get the category of this event
@@ -95,7 +101,7 @@ class Event extends Model
             return "https://placeholdit.imgix.net/~text?txtsize=70&txt=No%20Photo&w=1280&h=720";
         }
         
-        return $value->filename;        
+        return "covers/" . $value;        
     }
 
     /**
@@ -108,8 +114,11 @@ class Event extends Model
         if(!$value) {
             return "Free";
         }
-        
-        return "&pound;" . $value;        
+        if(is_numeric($value)) {
+            return "&pound;" . $value;        
+        }
+
+        return $value;
     }
 
     /**
@@ -129,6 +138,10 @@ class Event extends Model
      */
     public function getTimeEndAttribute($value) {
         
+        if(!$value) {
+            return "until finished";
+        }
+
         return date('g:ia', strtotime($value));
     }
 

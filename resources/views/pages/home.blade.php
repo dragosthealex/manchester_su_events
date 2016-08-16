@@ -35,14 +35,12 @@ section.home-section {
   color: rgb(243, 243, 5);
   font-size: 100px;
   text-shadow: 0 5px 10px #710671;
-  font-family: outrun_future;
+  font-family: 'gotham';
   margin-bottom: 60px;
   transition: 0.6s;
 }
 .intro .intro-body .intro-text {
-  font-family: 'snack_patrol';
   color: #e6e68a;
-  letter-spacing: 4px;
   font-size: 30px;
 }
 .featured-carousel .carousel-indicators {
@@ -158,7 +156,7 @@ section.home-section {
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
             <div class="front">
-              <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
+              <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
               <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
@@ -167,6 +165,7 @@ section.home-section {
                 <div class="card-body">
                   <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
                   <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+                  <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
                   <p class="card-description">
                     @if(strlen($event->description) > 100)
                       <?=substr($event->description, 0, 100)?>... <a href="{{ url('events/' . $event->id) }}">More</a>
@@ -175,7 +174,7 @@ section.home-section {
                     @endif
                   </p>
                   <p class="card-details">
-                    <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+                    <?=$event->price?>, <?=$event->location_name?>
                   </p>
                 </div>
                 <hr>
