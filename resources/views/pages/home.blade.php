@@ -149,11 +149,13 @@ section.home-section {
   </div>
   <div class="row inside-bar">
     <div class="col-xs-12">
-      @if(count($categories = App\Category::all()))
-        <a class="btn btn-primary filter" data-filter="all">Show All</a>
-        @foreach($categories as $category)
-          <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
-        @endforeach
+      @if(false)
+        @if(count($categories = App\Category::all()))
+          <a class="btn btn-primary filter" data-filter="all">Show All</a>
+          @foreach($categories as $category)
+            <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
+          @endforeach
+        @endif
       @endif
       <div style="display:inline-block;margin-left:20px;">
         <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
@@ -165,7 +167,7 @@ section.home-section {
   <div class="row">
     <div class="span-12 events-container">
       @foreach($events as $event)
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short @if(false)<?=$event->category ? 'category-' . $event->category->id : 'category-null'?>@endif"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->cover?'flip':''?>">

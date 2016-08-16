@@ -162,7 +162,7 @@ $(document).ready(function() {
         location_coords = {lat: <?=$event->lat?>, lng:<?=$event->lng?>}
       @endif
       myOptions = {
-          zoom: 14,
+          zoom: 15,
           center: location_coords,
           draggable: false,
           scrollwheel: false,
