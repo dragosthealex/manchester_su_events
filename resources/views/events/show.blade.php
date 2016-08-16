@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="row">
-      @if($event->getOriginal('cover'))
+      @if($event->cover)
       <div class="col-md-8">
         <div class="event-cover"></div>
       </div>
@@ -85,7 +85,7 @@
           <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
         </p>
         <p>
-          @if($event->getOriginal('price'))
+          @if($event->getOriginal('price') || $event->price != "Free")
           <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
           <a target="_blank" class="btn btn-primary"  href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>

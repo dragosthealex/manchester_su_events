@@ -46,9 +46,9 @@ Route::group(['prefix' => 'api'], function() {
 });
 
 Route::get('test', function() {
-  $events = App\Event::first();
+  $events = App\Event::all();
 
   $file = fopen('events.json', 'w');
-  fwrite(json_encode($events));
-  $file->close();
+  fwrite($file, json_encode($events));
+  fclose($file);
 });

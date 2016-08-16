@@ -98,9 +98,11 @@ class Event extends Model
     public function getCoverAttribute($value) {
 
         if(!$value) {
-            return "https://placeholdit.imgix.net/~text?txtsize=70&txt=No%20Photo&w=1280&h=720";
+            return "";
         }
-        
+        if(count(explode("covers/", $value))>1) {
+            return $value;
+        }
         return "covers/" . $value;        
     }
 
