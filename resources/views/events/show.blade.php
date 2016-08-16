@@ -164,6 +164,8 @@ $(document).ready(function() {
       myOptions = {
           zoom: 14,
           center: location_coords,
+          draggable: false,
+          scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       // Create map
