@@ -3,7 +3,9 @@
   <div class="card-cover-div" style="background-image:url('{{ asset('img/' . $event->cover) }}')"></div>
   <div class="card-content">
     <div class="card-body">
+      @if(false)
       <h2 class="card-title"><a href="{{ url('events/' . $event->slug) }}"><?=$event->title?></a></h2>
+      @endif
       <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
       <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
       <p class="card-description">
