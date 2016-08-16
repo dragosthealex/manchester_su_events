@@ -17,7 +17,7 @@
   background-origin: 0,0;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('<?=$event->cover?>');
+  background-image: url('{{ asset("img/".$event->cover) }}?>');
   width: 100%;
   display: block;
   min-height: 400px;

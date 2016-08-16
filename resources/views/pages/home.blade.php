@@ -48,7 +48,12 @@ section.home-section {
 .featured-carousel .carousel-indicators {
   bottom: -50px;
 }
-
+#featured-wide {
+  min-height: auto;
+}
+#featured-slider {
+  width: 100%;
+}
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;
@@ -81,7 +86,7 @@ section.home-section {
             <br>Welcome Week 2016
             <br>#MADEITTOMCR
           </p>
-          <a href="#featured" class="btn btn-circle page-scroll">
+          <a href="#featured-wide" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
           </a>
         </div>
@@ -89,6 +94,11 @@ section.home-section {
     </div>
   </div>
 </header>
+<section id="featured-wide" class="container-fluid text-center scrollable-section">
+  <div class="row">
+    <img class="img-responsive" src="{{ asset('img/bg/wristband_slider.jpg') }}" id="featured-slider">
+  </div>
+</section>
 <!-- Featured Events Section -->
 <section id="featured" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
@@ -117,6 +127,7 @@ section.home-section {
     </div>
   </div>
 </section>
+
 <!-- All Events Section -->
 <section id="events" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
@@ -126,10 +137,12 @@ section.home-section {
   </div>
   <div class="row inside-bar">
     <div class="col-xs-12">
-      <a class="btn btn-primary filter" data-filter="all">Show All</a>
-      @foreach(App\Category::all() as $category)
-        <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
-      @endforeach
+      @if(count($categories = App\Category::all()))
+        <a class="btn btn-primary filter" data-filter="all">Show All</a>
+        @foreach($categories as $category)
+          <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
+        @endforeach
+      @endif
       <div style="display:inline-block;margin-left:20px;">
         <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
         <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>

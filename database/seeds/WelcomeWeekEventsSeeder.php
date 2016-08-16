@@ -387,7 +387,8 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
-    factory(App\Event::class, 'welcome_week')->create([
+    
+    $event = factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "20:00",
       "time_end"          =>  "5:00",
@@ -395,6 +396,11 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
+    // $photo = factory(App\Photo::class)->create([
+    //   "filename"          =>  "event-" . $event->id . "-0",
+    // ]);
+    // $event->cover_id = $cover->id;
+
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "18:00",
