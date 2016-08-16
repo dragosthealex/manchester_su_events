@@ -48,11 +48,11 @@
 /* global stuff */
 html {
   background-color: #efefef;
-  font-family: 'Montserrat',Arial,sans-serif;
 }
 body {
   color: #333;
   background-color: #efefef;
+  font-family: 'Montserrat',Arial,sans-serif;
 }
 a {
   cursor: pointer;

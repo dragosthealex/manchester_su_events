@@ -46,7 +46,7 @@ Route::group(['prefix' => 'api'], function() {
 });
 
 Route::get('test', function() {
-  factory(App\Event::class, 'test')->create([
-    'location_address' => "Students' Union"
-  ]);
+  $events = App\Event::first();
+
+  echo json_encode($events);
 });
