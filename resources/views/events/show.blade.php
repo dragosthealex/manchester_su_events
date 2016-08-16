@@ -11,6 +11,7 @@
 }
 .event-header h2 {
   font-size: 80px;
+  font-family: 'solano_bold';
 }
 .event-cover {
   background-size: cover;

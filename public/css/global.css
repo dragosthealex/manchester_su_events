@@ -27,6 +27,24 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'solano';
+  src: url('../fonts/SolanoGothicMVB-SbCap.woff2') format('woff2'),
+    url('../fonts/SolanoGothicMVB-SbCap.woff') format('woff'),
+    url('../fonts/SolanoGothicMVB-SbCap.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'solano_bold';
+  src: url('../fonts/SolanoGothicMVB-BdCap.woff2') format('woff2'),
+    url('../fonts/SolanoGothicMVB-BdCap.woff') format('woff'),
+    url('../fonts/SolanoGothicMVB-BdCap.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 /* global stuff */
 html {
   background-color: #efefef;
@@ -80,14 +98,16 @@ section.content-section:first-child {
   padding-top: 0;
 }
 section.content-section .section-title {
-  font-family: 'gotham';
+  font-family: 'solano_bold';
+  font-weight: bold;
   color: rgba(113, 6, 113, 0.8);
   font-size: 70px;
   text-transform: uppercase;
 }
 section.content-section .section-subtitle {
-  font-family: 'baumans';
+  font-family: 'gotham';
   font-size: 30px;
+  font-weight: normal;
 }
 section.content-section .section-text {
   text-align: left;
@@ -201,7 +221,7 @@ section .row.inside-bar {
   text-transform: uppercase;
 }
 .page-header h3 {
-  font-family: 'baumans';
+  font-family: 'solano_bold';
   margin-left: 16px;
 }
 /* /content */

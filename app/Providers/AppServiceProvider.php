@@ -16,6 +16,11 @@ class AppServiceProvider extends ServiceProvider
     {
         // Geocode the address
         Event::created(function ($event) {
+            // SLUG
+            $event->slug = str_slug($event->title, '-');
+            $event->save();
+
+            /// GEOCODE
             $address = ($event->location_address ? $event->location_address : $event->location_name) . ' Manchester, UK';
             $url = "http://api.opencagedata.com/geocode/v1/json?query=" . urlencode($address) . "&pretty=1&key=2a6f835f29ecc858794db4643cd52fe8";
             //  Initiate curl
