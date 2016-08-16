@@ -169,11 +169,13 @@ section.home-section {
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
+            @if($event->getOriginal('cover'))
             <div class="front">
               <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
               <h2 class="card-title"><a href="{{ url('events/' . $event->id) }}"><?=$event->title?></a></h2>
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
+            @endif
             <div class="back">
               <div class="card-content">
                 <div class="card-body">

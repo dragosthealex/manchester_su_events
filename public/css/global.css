@@ -1,25 +1,3 @@
-/* fonts */
-@font-face {
-  font-family: 'outrun_future';
-  src: url('../fonts/future-webfont.woff2') format('woff2'),
-       url('../fonts/future-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'snack_patrol';
-  src: url('../fonts/snack_patrol.woff2') format('woff2'),
-       url('../fonts/snack_patrol.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'baumans';
-  src: url('../fonts/baumans-regular-webfont.woff2') format('woff2'),
-       url('../fonts/baumans-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 @font-face {
   font-family: 'gotham';
   src: url('../fonts/gotham.woff2') format('woff2'),
@@ -43,8 +21,6 @@
   font-weight: bold;
   font-style: normal;
 }
-
-
 /* global stuff */
 html {
   background-color: #efefef;

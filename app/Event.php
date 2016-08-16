@@ -174,5 +174,4 @@ class Event extends Model
 
         return ucfirst($value);
     }
-
 }
