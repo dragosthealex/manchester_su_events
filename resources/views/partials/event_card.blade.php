@@ -14,7 +14,7 @@
         @endif
       </p>
       <p class="card-details">
-        <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+        <?=$event->price?>, <?=$event->location_name?>
       </p>
     </div>
     <hr>
