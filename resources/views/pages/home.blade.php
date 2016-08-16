@@ -52,6 +52,17 @@ section.home-section {
 #featured-slider {
   width: 100%;
 }
+.card-cover-div {
+  -webkit-box-shadow: inset 0 -50px 200px -50px #000;
+  -moz-box-shadow: inset 0 -50px 200px -50px #000;
+  box-shadow: inset 0 -50px 200px -50px #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-origin: 0;
+  height: 300px;
+  width: 100%;
+}
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;

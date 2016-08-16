@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         // Geocode the address
         Event::created(function ($event) {
             // SLUG
-            $event->slug = str_slug($event->title, '-');
+            $event->slug = str_slug($event->date_start . ' ' . $event->time_start . ' ' . $event->title, '-');
             $event->save();
 
             /// GEOCODE

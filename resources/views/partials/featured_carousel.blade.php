@@ -13,8 +13,9 @@
     <!-- Slide -->
     <div class="item active">
       <div class="row">
-        @foreach($featured_events as $key => $event)
-          @if($key && !($key%4))
+        <?php $key=1;?>
+        @foreach($featured_events as $event)
+          @if($key>4 && !(($key-1)%4))
               </div>
             </div>
             <div class="item">
@@ -22,6 +23,7 @@
           @endif
           <div class="col-xs-3">
             @include('partials.event_card', ['event'=>$event])
+            <?php $key++;?>
           </div>
         @endforeach 
       </div>
@@ -44,8 +46,9 @@
     <!-- Slide -->
     <div class="item active">
       <div class="row">
-        @foreach($featured_events as $key => $event)
-          @if($key && !($key%3))
+        <?php $key=1;?>
+        @foreach($featured_events as $event)
+          @if($key>3 && !(($key-1)%3))
               </div>
             </div>
             <div class="item">
@@ -53,6 +56,7 @@
           @endif
           <div class="col-xs-4">
             @include('partials.event_card', ['event'=>$event])
+            <?php $key++;?>
           </div>
         @endforeach 
       </div>
@@ -75,8 +79,9 @@
     <!-- Slide -->
     <div class="item active">
       <div class="row">
-        @foreach($featured_events as $key => $event)
-          @if($key && !($key%2))
+        <?php $key=1;?>
+        @foreach($featured_events as $event)
+          @if($key>2 && !(($key-1)%2))
               </div>
             </div>
             <div class="item">
@@ -84,6 +89,7 @@
           @endif
           <div class="col-xs-6">
             @include('partials.event_card', ['event'=>$event])
+            <?php $key++;?>
           </div>
         @endforeach
       </div>
@@ -98,8 +104,9 @@
     <!-- Slide -->
     <div class="item active">
       <div class="row">
-        @foreach($featured_events as $key => $event)
-          @if($key)
+        <?php $key=1;?>
+        @foreach($featured_events as $event)
+          @if($key > 1)
               </div>
             </div>
             <div class="item">
@@ -107,6 +114,7 @@
           @endif
           <div class="col-xs-12">
             @include('partials.event_card', ['event'=>$event])
+            <?php $key++;?>
           </div>
         @endforeach
       </div>

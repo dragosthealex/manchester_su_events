@@ -17,7 +17,7 @@ class AddExtraColumnsEventsTable extends Migration
             $table->date('date_end')->nullable()->default(NULL);
             $table->string('time_start', 15);
             $table->string('time_end', 15);
-            $table->unsignedInteger('price')->nullable()->default(NULL);
+            $table->string('price', 50)->nullable()->default(NULL);
             $table->string('location_address', 200)->nullable();
             $table->string('location_name', 200)->nullable();
             $table->string('tickets_link', 200);

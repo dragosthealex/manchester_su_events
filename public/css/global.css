@@ -181,6 +181,7 @@ section .row.inside-bar {
   text-align: left;
   color: #515151;
   margin-bottom: 0;
+  min-height: 64px;
 }
 .card .card-content hr {
   margin: 0;  
