@@ -32,16 +32,21 @@ section.home-section {
   width: 100%;
 }
 .intro .intro-body .brand-heading {
-  color: rgb(243, 243, 5);
+  /*color: rgb(243, 243, 5);*/
   font-size: 100px;
-  text-shadow: 0 5px 10px #710671;
+  /*text-shadow: 0 5px 10px #710671;*/
   font-family: 'gotham';
   margin-bottom: 60px;
   transition: 0.6s;
+  color: #fefefe;
+  text-transform: uppercase;
 }
 .intro .intro-body .intro-text {
-  color: #e6e68a;
+  /*color: #e6e68a;*/
+  color: #fefefe;
   font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'gotham';
 }
 .featured-carousel .carousel-indicators {
   bottom: -50px;
@@ -121,8 +126,10 @@ section.home-section {
       <p class="section-text">
         Explore Manchester and start making new friends with an Official Welcome
         Week wristband. For only £55 (inc. booking fee) you will gain entry into all of
-        the events below.<br><br>
-        <a class="btn btn-primary" target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083">Buy Welcome Week Wristband</a>
+        the events below.<br>
+        <div class="text-center">
+          <a class="btn btn-primary" target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083">Buy Welcome Week Wristband</a>
+        </div>
       </p>
     </div>
   </div>

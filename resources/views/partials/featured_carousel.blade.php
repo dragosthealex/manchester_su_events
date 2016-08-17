@@ -1,12 +1,15 @@
 <!-- carousel for medium & large devices -->
 <div id="featured-carousel-xl" class="featured-carousel carousel slide visible-xl"> 
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-      <li data-target="#featured-carousel-xl" data-slide-to="0" class="active"></li>
-    @for($i=1; $i<=(count($featured_events)-1)/4; $i++)
-      <li data-target="#featured-carousel-xl" data-slide-to="<?=$i?>"></li>
-    @endfor
-  </ol>
+  
+  @if(count($featured_events)>4)
+    <!-- Indicators -->  
+    <ol class="carousel-indicators">
+        <li data-target="#featured-carousel-xl" data-slide-to="0" class="active"></li>
+        @for($i=1; $i<=(count($featured_events)-1)/4; $i++)
+          <li data-target="#featured-carousel-xl" data-slide-to="<?=$i?>"></li>
+        @endfor
+    </ol>
+  @endif
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner"> 
@@ -33,6 +36,7 @@
 
 <!-- carousel for medium & large devices -->
 <div id="featured-carousel-lg" class="featured-carousel carousel slide visible-lg hidden-xl"> 
+  @if(count($featured_events)>3)
   <!-- Indicators -->
   <ol class="carousel-indicators">
       <li data-target="#featured-carousel-lg" data-slide-to="0" class="active"></li>
@@ -40,6 +44,7 @@
       <li data-target="#featured-carousel-lg" data-slide-to="<?=$i?>"></li>
     @endfor
   </ol>
+  @endif
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner"> 
@@ -66,6 +71,7 @@
 
 <!-- carousel for small devices -->
 <div id="featured-carousel-sm" class="featured-carousel carousel slide visible-sm visible-md"> 
+  @if(count($featured_events)>2)
   <!-- Indicators -->
   <ol class="carousel-indicators">
       <li data-target="#featured-carousel-sm" data-slide-to="0" class="active"></li>
@@ -73,6 +79,7 @@
       <li data-target="#featured-carousel-sm" data-slide-to="<?=$i?>"></li>
     @endfor
   </ol>
+  @endif
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner"> 
