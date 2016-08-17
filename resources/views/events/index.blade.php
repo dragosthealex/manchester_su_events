@@ -80,6 +80,9 @@ a.days-scroll:hover {
 #days-right {
   right: -20px;
 }
+#no-events-msg {
+  color: #710671;
+}
 @media(max-width: 768px) {
   #calendar-controls-section .inside-bar {
     margin: 0 -15px;
