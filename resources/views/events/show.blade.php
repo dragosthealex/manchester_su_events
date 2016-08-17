@@ -10,8 +10,19 @@
   text-align: center;
 }
 .event-header h2 {
-  font-size: 80px;
-  font-family: 'solano_bold';
+  font-size: 40px;
+  font-family: 'montserrat';
+}
+.event-date {
+  font-size: 24px;
+  text-align: center;
+}
+.card-time {
+  font-size: 22px;
+  text-align: center;
+}
+.event-details {
+  text-align: center;
 }
 .event-cover {
   background-size: cover;
@@ -82,13 +93,13 @@
           <?=$event->description?>
         </p>
         <p class="event-details">
-          <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+          <?=$event->price?>, <?=$event->location_name?>
         </p>
-        <p>
+        <p class="text-center">
           @if($event->getOriginal('price') || $event->price != "Free")
           <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
-          <a target="_blank" class="btn btn-primary"  href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+          <a target="_blank" class="btn btn-primary"  href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>
       </div>
     </div>

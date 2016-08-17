@@ -215,7 +215,7 @@ section.content-section .section-text.text-featured {
                   @if($event->getOriginal('price') || $event->price != 'Free')
                     <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
-                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  <a class="card-action" target="_blank" href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>

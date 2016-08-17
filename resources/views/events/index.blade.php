@@ -14,7 +14,7 @@
   font-family: 'solano_bold';
 }
 .calendar-wrapper {
-  height: 44px;
+  height: 46px;
   overflow: hidden;
 }
 .month-controls {
@@ -53,10 +53,11 @@ ul.calendar li a {
   text-align: center;
 }
 ul.calendar li:hover a {
-  background: rgba(64, 224, 208, 0.20);
+  background: rgba(240, 255, 3, 0.15);
 }
 ul.calendar li.active a {
-  background: rgba(64, 224, 208, 0.53);
+  background: rgba(240, 255, 3, 0.20);
+  border: 1px solid #710671;
 }
 .days-scroll {
   position: absolute;
@@ -196,7 +197,7 @@ a.days-scroll:hover {
                   @if($event->getOriginal('price') || $event->price != "Free"))
                     <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
-                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=urlencode(($event->location_address?$event->location_address:$event->location_name).' Manchester, UK')?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  <a class="card-action" target="_blank" href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -204,7 +205,7 @@ a.days-scroll:hover {
         </div>
       @endforeach
       <p id="no-events-msg" class="text-info text-center">
-        There are no scheduled events for today.
+        There are no scheduled events for this day.
       </p>
     </div>
   </div>
