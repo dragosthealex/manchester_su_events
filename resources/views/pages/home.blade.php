@@ -262,7 +262,6 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     init();
-    console.log("sheeet");
   });
   
   $(window).bind('scroll', function(e){
