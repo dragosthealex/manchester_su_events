@@ -346,6 +346,9 @@ a.link-dark:hover {
 .navbar-custom ul.nav li a {
   padding: 21px 25px;
 }
+.navbar-custom ul.nav > li > a {
+  font-size: 18px;
+}
 .navbar-custom.top-nav-collapse {
   background-color: #41535D;
   height: 50px;
