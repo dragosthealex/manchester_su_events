@@ -2,6 +2,12 @@
 
 @section('title') Events :: @parent @endsection
 
+@section('meta')
+<meta property="og:title"              content="Calendar :: Manchester Students' Union Events">
+<meta property="og:description"        content="">
+<meta property="og:image"              content="{{ asset('img/logo.jpg') }}">
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css') }}">
@@ -43,7 +49,7 @@ ul.calendar li {
 }
 ul.calendar li a {
   padding: 10px 16px;
-  color: #710671;
+  color: #41535D;
   font-family: arial black;
   font-size: 16px;
   border-radius: 30px;
@@ -57,7 +63,7 @@ ul.calendar li:hover a {
   border: 1px solid #000;
 }
 ul.calendar li.active a {
-  background: #710671;
+  background: #41535D;
   border: 1px solid #000;
   color: #fefefe;
 }
@@ -71,7 +77,7 @@ ul.calendar li.active a {
   transition: all 0.3s;
 }
 a.days-scroll:hover {
-  background-color: rgba(113, 6, 113, 0.6);
+  background-color: rgba(65,83,93,0.6);
   color: rgb(243, 243, 5);
 }
 #days-left {
@@ -81,7 +87,7 @@ a.days-scroll:hover {
   right: -20px;
 }
 #no-events-msg {
-  color: #710671;
+  color: #41535D;
 }
 @media(max-width: 768px) {
   #calendar-controls-section .inside-bar {

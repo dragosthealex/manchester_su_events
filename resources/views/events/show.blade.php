@@ -2,6 +2,12 @@
 
 @section('title') <?=$event->title?> :: @parent @endsection
 
+@section('meta')
+<meta property="og:title"              content="<?=$event->title?> :: Manchester Students' Union Events">
+<meta property="og:description"        content="<?=$event->description?>">
+<meta property="og:image"              content="{{ $event->cover?$event->cover:asset('img/logo.jpg') }}">
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css') }}">

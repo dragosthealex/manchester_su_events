@@ -15,6 +15,12 @@
               content=""/>
     @show
 
+        <meta property="og:url"                content="{{ url('/') }}">
+        <meta property="og:type"               content="">
+        <meta property="og:title"              content="Manchester Students' Union Events">
+        <meta property="og:description"        content="">
+        <meta property="og:image"              content="{{ asset('img/logo.jpg') }}">
+
         <link href="{{ asset('lib/jquery-mobile/css/jquery.mobile.custom.structure.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <link href="{{ asset('css/grayscale.min.css') }}" rel="stylesheet">
