@@ -51,13 +51,15 @@ ul.calendar li a {
   display: block;
   width: 45px;
   text-align: center;
+  border: 1px solid transparent;
 }
 ul.calendar li:hover a {
-  background: rgba(240, 255, 3, 0.15);
+  border: 1px solid #000;
 }
 ul.calendar li.active a {
-  background: rgba(240, 255, 3, 0.20);
-  border: 1px solid #710671;
+  background: #710671;
+  border: 1px solid #000;
+  color: #fefefe;
 }
 .days-scroll {
   position: absolute;
