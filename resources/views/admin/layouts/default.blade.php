@@ -34,12 +34,18 @@
     @if(count(Notification::all()->all()))
       @foreach (Notification::all()->all() as $key => $notification)
         $.notify({
-        message: "<?=$notification->getMessage()?>"
-      }, {
-        type: '{{$notification->getType()}}'
-      });
-    @endforeach
-  @endif
+          message: "<?=$notification->getMessage()?>"
+        }, {
+          type: '{{$notification->getType()}}'
+        });
+      @endforeach
+    @endif
+
+    var init = function() {
+      $(".datatables").DataTable();
+    };
+
+    init();
   });
 </script>
 <script src="{{ asset('js/global.js') }}"></script>

@@ -53,6 +53,10 @@ section.home-section {
 .featured-carousel .carousel-indicators {
   bottom: -50px;
 }
+section.content-section .section-text.text-featured {
+  text-align: center;
+  font-size: 23px;
+}
 #featured-wide {
   min-height: auto;
 }
@@ -125,7 +129,7 @@ section.home-section {
       <p class="section-subtitle">
         Congratulations! You’ve made it to Manchester!
       <p>
-      <p class="section-text">
+      <p class="section-text text-center">
         Explore Manchester and start making new friends with an Official Welcome
         Week wristband. For only £55 (inc. booking fee) you will gain entry into all of
         the events below.<br>
@@ -183,7 +187,9 @@ section.home-section {
             @if($event->cover)
             <div class="front">
               <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
+              @if(false)
               <h2 class="card-title"><a href="{{ url('events/' . $event->slug) }}"><?=$event->title?></a></h2>
+              @endif
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
             @endif

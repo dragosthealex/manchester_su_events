@@ -76,7 +76,7 @@
       <div class="col-sm-12">
       @endif
         <h3 class="event-subtitle"><?=$event->subtitle?></h3>
-        <h4 class="event-date"><a><?=date('l, j F Y', strtotime($event->date_start))?></a></h4>
+        <h4 class="event-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
         <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
         <p class="event-description">
           <?=$event->description?>

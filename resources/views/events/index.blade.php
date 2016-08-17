@@ -165,11 +165,15 @@ a.days-scroll:hover {
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
           <div class="card has-cover event-card <?=$event->cover?'flip':''?>">
+            @if($event->cover)
             <div class="front">
               <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
+              @if(false)
               <h2 class="card-title"><a href="{{ url('events/' . $event->slug) }}"><?=$event->title?></a></h2>
+              @endif
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
+            @endif
             <div class="back">
               <div class="card-content">
                 <div class="card-body">
