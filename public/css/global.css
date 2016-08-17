@@ -1,30 +1,26 @@
 @font-face {
   font-family: 'gotham';
-  src: url('../fonts/gotham.woff2') format('woff2'),
-       url('../fonts/gotham.woff') format('woff');
+  src: url('../fonts/gotham.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'solano';
-  src: url('../fonts/SolanoGothicMVB-SbCap.woff2') format('woff2'),
-    url('../fonts/SolanoGothicMVB-SbCap.woff') format('woff'),
+  src: url('../fonts/SolanoGothicMVB-SbCap.woff') format('woff'),
     url('../fonts/SolanoGothicMVB-SbCap.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'solano_bold';
-  src: url('../fonts/SolanoGothicMVB-BdCap.woff2') format('woff2'),
-    url('../fonts/SolanoGothicMVB-BdCap.woff') format('woff'),
+  src: url('../fonts/SolanoGothicMVB-BdCap.woff') format('woff'),
     url('../fonts/SolanoGothicMVB-BdCap.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
     font-family: 'montserrat';
-    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
-         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    src: url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
