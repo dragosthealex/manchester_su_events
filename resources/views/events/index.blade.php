@@ -209,7 +209,7 @@ a.days-scroll:hover {
           </div>
         </div>
       @endforeach
-      <p id="no-events-msg" class="text-info text-center">
+      <p id="no-events-msg" class="text-info text-center" style="display:none;">
         There are no scheduled events for this day.
       </p>
     </div>
