@@ -97,7 +97,7 @@
         </p>
         <p class="text-center">
           @if($event->getOriginal('price') || $event->price != "Free")
-          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
           <a target="_blank" class="btn btn-primary"  href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>

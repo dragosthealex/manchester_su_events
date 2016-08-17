@@ -80,7 +80,7 @@ section.content-section:first-child {
 section.content-section .section-title {
   font-family: 'solano_bold';
   font-weight: bold;
-  color: rgba(113, 6, 113, 0.8);
+  color: rgba(65,83,93,0.8);
   font-size: 70px;
   text-transform: uppercase;
 }
@@ -127,7 +127,7 @@ section .row.inside-bar {
 .card.has-cover .card-title a {
   font-family: 'gotham';
   color: rgb(243, 243, 5);
-  /*text-shadow: 2px 2px 2px #710671;*/
+  /*text-shadow: 2px 2px 2px #41535D;*/
   text-transform: capitalize;
   text-decoration: none;
 }
@@ -172,7 +172,7 @@ section .row.inside-bar {
 }
 
 .card .card-content .card-footer .card-action {
-  color: #710671;
+  color: #41535D;
   float: left;
   padding: 15px;
   font-size: 20px;
@@ -186,11 +186,11 @@ section .row.inside-bar {
   margin-left: 0;
 }
 .card .card-content .card-footer .card-action:hover {
-  background-color: rgba(113, 6, 113, 0.6);
-  color: rgb(243, 243, 5);
+  background-color: rgba(65,83,93,0.6);
+  color: #fefefe;
 }
 .card .card-content .card-footer .card-action:active {
-  background-color: rgba(113, 6, 113, 0.8);
+  background-color: rgba(65,83,93,0.8);
   color: rgb(243, 243, 5);
 }
 .card.event-card .card-description {
@@ -210,17 +210,17 @@ section .row.inside-bar {
 
 /* misc */
 .carousel-indicators li {
-  border-color: #710671;
+  border-color: #41535D;
 }
 .carousel-indicators li.active {
   background-color: rgb(243, 243, 5);
 }
 a.link-dark {
-  color: #710671;
+  color: #41535D;
   cursor: pointer;
 }
 a.link-dark:hover {
-  color: rgba(113, 6, 113, 0.8);
+  color: rgba(65,83,93,0.8);
 }
 .word-separator {
   margin-bottom: 20px;
@@ -230,7 +230,7 @@ a.link-dark:hover {
   font-family: 'gotham';
 }
 .text-primary {
-  color: #710671;
+  color: #41535D;
 }
 /* /misc */
 
@@ -240,7 +240,7 @@ a.link-dark:hover {
   margin-bottom: 5px;
 }
 .btn-primary {
-  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
+  background-image: linear-gradient(rgba(65,83,93,0.6),rgba(65,83,93,0.8) 6%,#41535D);
   /*color: rgb(243, 243, 5);*/
   background-color: rgba(113, 6, 113, 0.3);
   border: 1px solid #000;
@@ -249,20 +249,20 @@ a.link-dark:hover {
   text-transform: uppercase;
 }
 .btn-primary:hover {
-  background-color: rgba(113, 6, 113, 0.8);
-  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
+  background-color: rgba(65,83,93,0.8);
+  background-image: linear-gradient(rgba(65,83,93,0.6),rgba(65,83,93,0.8) 6%,#41535D);
   /*color: rgb(243, 243, 5);*/
-  border: 1px solid rgba(113, 6, 113, 1);
+  border: 1px solid #35454e;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-image: linear-gradient(rgba(113, 6, 113, 0.8),rgba(113, 6, 113, 0.9) 6%,#710671);
-  background-color: rgba(113, 6, 113, 0.8);
+  background-image: linear-gradient(#35454e,#35454e 6%,#41535D);
+  background-color: rgba(65,83,93,0.8);
 }
 .btn-primary.active:hover,
 .btn-primary:active:hover,
 .btn-primary.focus, .btn-primary:focus {
-  background-color: rgba(113, 6, 113, 1);
+  background-color: #35454e;
 }
 .btn-social {
   padding: 5px 10px;
@@ -340,14 +340,14 @@ a.link-dark:hover {
 
 
 .navbar-custom {
-  background-color: #710671;
+  background-color: #41535D;
   padding: 0;
 }
 .navbar-custom ul.nav li a {
   padding: 21px 25px;
 }
 .navbar-custom.top-nav-collapse {
-  background-color: #710671;
+  background-color: #41535D;
   height: 50px;
   box-shadow: 0 2px 6px 1px rgba(0,0,0,0.4);
   border: none;
@@ -401,7 +401,7 @@ a.link-dark:hover {
 
 /* footer */
 #footer {
-  background-color: #710671;
+  background-color: #41535D;
   padding: 20px 0;
   color: #fefefe;
 }
@@ -523,7 +523,7 @@ a.link-dark:hover {
 
 @media(max-width: 768px) {
   .navbar-custom {
-    background: #710671;
+    background: #41535D;
     padding: 0;
   }
   .navbar-custom,
