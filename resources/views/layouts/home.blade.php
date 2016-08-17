@@ -6,14 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@section('title') Manchester Students' Union Events @show</title>
-    @section('meta_keywords')
-        <meta name="keywords" content=""/>
-    @show @section('meta_author')
-        <meta name="author" content=""/>
-    @show @section('meta_description')
-        <meta name="description"
-              content=""/>
-    @show
 
         <meta property="og:url"                content="{{ url('/') }}">
         <meta property="og:type"               content="">
