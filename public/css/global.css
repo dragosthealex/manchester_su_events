@@ -118,11 +118,12 @@ section .row.inside-bar {
   text-overflow: ellipsis;
   width: 90%;
   text-align: left;
+  font-size: 24px;
 }
 .card.has-cover .card-title a {
-  font-family: 'solano_bold';
+  font-family: 'gotham';
   color: rgb(243, 243, 5);
-  text-shadow: 2px 2px 2px #710671;
+  /*text-shadow: 2px 2px 2px #710671;*/
   text-transform: capitalize;
   text-decoration: none;
 }
