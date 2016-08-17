@@ -40,6 +40,7 @@ section.home-section {
   transition: 0.6s;
   color: #fefefe;
   text-transform: uppercase;
+  text-shadow: 0 0 50px #000;
 }
 .intro .intro-body .intro-text {
   /*color: #e6e68a;*/
@@ -47,6 +48,7 @@ section.home-section {
   font-size: 30px;
   text-transform: uppercase;
   font-family: 'gotham';
+  text-shadow: 0 0 40px #000;
 }
 .featured-carousel .carousel-indicators {
   bottom: -50px;
