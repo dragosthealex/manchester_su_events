@@ -242,7 +242,7 @@ $(document).ready(function() {
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
-    // Fix firefox shit
+    // Fix issues with Firefox.
     if($(window).width() > 768) {
       $("header.intro .vegas-wrapper").attr("style", "height:" + $("header.intro").height() + "px!important;");
     }
