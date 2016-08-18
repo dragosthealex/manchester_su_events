@@ -213,7 +213,7 @@ section .row.inside-bar {
   border-color: #41535D;
 }
 .carousel-indicators li.active {
-  background-color: rgb(243, 243, 5);
+  background-color: #41535D;
 }
 a.link-dark {
   color: #41535D;
