@@ -213,7 +213,7 @@ section.content-section .section-text.text-featured {
                 <hr>
                 <div class="card-footer">
                   @if($event->getOriginal('price') || $event->price != 'Free')
-                    <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                    <a class="card-action" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
                   <a class="card-action" target="_blank" href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
@@ -236,9 +236,7 @@ $(document).ready(function() {
       slides: [
           { src: "{{ asset('img/bg/home1.jpg') }}" },
           { src: "{{ asset('img/bg/home2.jpg') }}" },
-          { src: "{{ asset('img/bg/home3.jpg') }}" },
-          { src: "{{ asset('img/bg/home4.jpg') }}" },
-          { src: "{{ asset('img/bg/home5.jpg') }}" }
+          { src: "{{ asset('img/bg/home3.jpg') }}" }
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
