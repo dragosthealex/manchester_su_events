@@ -5,7 +5,7 @@
         Menu <i class="fa fa-bars"></i>
       </button>
       <a class="navbar-brand page-scroll" href="http://manchesterstudentsunion.com/">
-        <img class="img-responsive" src="{{ asset('img/logo.jpg') }}">
+        <img class="img-responsive" style="background-color: rgba(0, 0, 0, 0)" src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/63366/optimized/microsite-white-logo.png">
       </a>
     </div>
 
