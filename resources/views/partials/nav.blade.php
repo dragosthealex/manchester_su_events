@@ -4,7 +4,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
         Menu <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#page-top">
+      <a class="navbar-brand page-scroll" href="http://manchesterstudentsunion.com/">
         <img class="img-responsive" src="{{ asset('img/logo.jpg') }}">
       </a>
     </div>
