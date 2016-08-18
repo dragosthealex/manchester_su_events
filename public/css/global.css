@@ -213,7 +213,7 @@ section .row.inside-bar {
   border-color: #41535D;
 }
 .carousel-indicators li.active {
-  background-color: rgb(243, 243, 5);
+  background-color: #41535D;
 }
 a.link-dark {
   color: #41535D;
@@ -258,6 +258,7 @@ a.link-dark:hover {
 .btn-primary.active {
   background-image: linear-gradient(#35454e,#35454e 6%,#41535D);
   background-color: rgba(65,83,93,0.8);
+  border: 1px solid #35454e;
 }
 .btn-primary.active:hover,
 .btn-primary:active:hover,
