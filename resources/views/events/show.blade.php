@@ -2,6 +2,12 @@
 
 @section('title') <?=$event->title?> :: @parent @endsection
 
+@section('meta')
+<meta property="og:title"              content="<?=$event->title?> :: Manchester Students' Union Events">
+<meta property="og:description"        content="<?=$event->description?>">
+<meta property="og:image"              content="{{ $event->cover?$event->cover:asset('img/logo.jpg') }}">
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css') }}">
@@ -10,14 +16,26 @@
   text-align: center;
 }
 .event-header h2 {
-  font-size: 80px;
+  font-size: 40px;
+  font-family: 'montserrat';
+}
+.event-date {
+  font-size: 24px;
+  text-align: center;
+}
+.card-time {
+  font-size: 22px;
+  text-align: center;
+}
+.event-details {
+  text-align: center;
 }
 .event-cover {
   background-size: cover;
   background-origin: 0,0;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('<?=$event->cover?>');
+  background-image: url('{{ asset("img/".$event->cover) }}?>');
   width: 100%;
   display: block;
   min-height: 400px;
@@ -50,6 +68,9 @@
   .event-subtitle {
     margin-top: 30px;
   }
+  .event-header h2 {
+    font-size: 45px;
+  }
 }
 </style>
 @endsection
@@ -63,7 +84,7 @@
       </div>
     </div>
     <div class="row">
-      @if($event->getOriginal('cover'))
+      @if($event->cover)
       <div class="col-md-8">
         <div class="event-cover"></div>
       </div>
@@ -72,31 +93,34 @@
       <div class="col-sm-12">
       @endif
         <h3 class="event-subtitle"><?=$event->subtitle?></h3>
-        <h4 class="event-date"><a><?=date('l, j F Y', strtotime($event->date_start))?></a></h4>
+        <h4 class="event-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+        <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
         <p class="event-description">
           <?=$event->description?>
         </p>
         <p class="event-details">
-          <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+          <?=$event->price?>, <?=$event->location_name?>
         </p>
-        <p>
-          @if($event->getOriginal('price'))
-          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+        <p class="text-center">
+          @if($event->getOriginal('price') || $event->price != "Free")
+          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
-          <a target="_blank" class="btn btn-primary" href="http://maps.google.com/?q=<?=trim(preg_replace('/\s+/', ' ', $event->location_address))?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+          <a target="_blank" class="btn btn-primary"  href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>
       </div>
     </div>
-    @if(count($event->photos))
-    <div class="row">
-      <div class="col-sm-12 event-photos">
-        @foreach($event->photos as $photo)
-          <a class="col-md-3 col-sm-4 col-xs-6" href="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}" data-gallery>
-            <img class="img-responsive" src="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}">
-          </a>
-        @endforeach
+    @if(false)
+      @if(count($event->photos))
+      <div class="row">
+        <div class="col-sm-12 event-photos">
+          @foreach($event->photos as $photo)
+            <a class="col-md-3 col-sm-4 col-xs-6" href="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}" data-gallery>
+              <img class="img-responsive" src="{{ asset('img/events/'.$event->id.'/'.$photo->filename) }}">
+            </a>
+          @endforeach
+        </div>
       </div>
-    </div>
+      @endif
     @endif
   </div>
 </section>
@@ -108,7 +132,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
     <div class="slides"></div>
@@ -148,20 +172,17 @@
 <script>
 $(document).ready(function() {
   function initMap() {
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-      'address': "<?=trim(preg_replace('/\s+/', ' ', ($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'))?>"
-    }, function(results, status) {
 
-      var location_coords = {lat: '53.4651813', lng:'-2.2325923'};
+      var location_coords = {lat: 53.4651813, lng:-2.2325923};
 
-      if (status == google.maps.GeocoderStatus.OK) {
-        location_coords = results[0].geometry.location;
-      }
-
+      @if($event->lat && $event->lng)
+        location_coords = {lat: <?=$event->lat?>, lng:<?=$event->lng?>}
+      @endif
       myOptions = {
-          zoom: 8,
+          zoom: 15,
           center: location_coords,
+          draggable: false,
+          scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       // Create map
@@ -172,7 +193,6 @@ $(document).ready(function() {
           map: map,
           position: location_coords
       });
-    });
   }
   initMap();
 });

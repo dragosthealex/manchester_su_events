@@ -44,3 +44,11 @@ Route::group(['prefix' => 'api'], function() {
   Route::resource('categories', 'Api\CategoryController',
                  ['only'  =>  ['index', 'show']]);
 });
+
+Route::get('test', function() {
+  $events = App\Event::all();
+
+  $file = fopen('events.json', 'w');
+  fwrite($file, json_encode($events));
+  fclose($file);
+});

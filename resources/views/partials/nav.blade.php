@@ -4,8 +4,8 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
         Menu <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#page-top">
-        <img class="img-responsive" src="{{ asset('img/logo.png') }}">
+      <a class="navbar-brand page-scroll" href="http://manchesterstudentsunion.com/">
+        <img class="img-responsive" src="{{ asset('img/logo.jpg') }}">
       </a>
     </div>
 
@@ -22,6 +22,10 @@
         <li>
           <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
         </li>
+        <li>
+          <a class="page-scroll" href="http://manchesterstudentsunion.com/top-navigation/welcome-week-2016/welcome-week-faqs">FAQ</a>
+        </li>
+        @if(false)
         @if (Auth::guest())
           <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ url('auth/login') }}"><i
             class="fa fa-sign-in"></i> Login</a>
@@ -53,6 +57,7 @@
                 </li>
               </ul>
             </li>
+        @endif
         @endif
       </ul>
     </div>

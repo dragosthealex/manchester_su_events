@@ -1,7 +1,6 @@
 $(document).ready(function() {
   // Init stuff
   var init = function() {
-    $(".datatables").DataTable();
   }
 
   init();

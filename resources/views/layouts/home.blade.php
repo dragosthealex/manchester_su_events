@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@section('title') Manchester Students' Union Events @show</title>
-    @section('meta_keywords')
-        <meta name="keywords" content=""/>
-    @show @section('meta_author')
-        <meta name="author" content=""/>
-    @show @section('meta_description')
-        <meta name="description"
-              content=""/>
-    @show
+
+        <meta property="og:url"                content="{{ url('/') }}">
+        <meta property="og:type"               content="">
+        <meta property="og:title"              content="Manchester Students' Union Events">
+        <meta property="og:description"        content="">
+        <meta property="og:image"              content="{{ asset('img/logo.jpg') }}">
 
         <link href="{{ asset('lib/jquery-mobile/css/jquery.mobile.custom.structure.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet">

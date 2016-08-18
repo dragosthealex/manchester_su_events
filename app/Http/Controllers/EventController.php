@@ -11,6 +11,8 @@ use App\Category;
 use App\Photo;
 use App\User;
 use App\Tag;
+use Eloquent;
+use Illuminate\Support\Collection;
 
 class EventController extends Controller
 {
@@ -21,12 +23,22 @@ class EventController extends Controller
    */
   public function index() {
     
-    $events = Event::with('author')
-                   ->with('photos')
-                   ->with('cover')
-                   ->with('tags')
-                   ->with('category')
-                   ->get();
+    // $events = Event::with('author')
+    //                /*->with('photos')*/
+    //                /*->with('cover')*/
+    //                ->with('tags')
+    //                ->with('category')
+    //                ->get();
+
+    $events_json = json_decode(file_get_contents('events.json'), 1);
+
+    Eloquent::unguard();
+    $events = new Collection;
+    foreach ($events_json as $key => $events_json) {
+      $event = new Event($events_json);
+      $events->push($event);
+    }
+    Eloquent::reguard();
 
     return view('events.index')
               ->with('events', $events);
@@ -59,14 +71,38 @@ class EventController extends Controller
    */
   public function show($id) {
     
-    $event = Event::find($id);
+    // $event = Event::find($id);
 
-    // Try by slug
-    if(!$event) {
-      $event = Event::where('slug', $slug);
+    // // Try by slug
+    // if(!$event) {
+    //   $event = Event::where('slug', $id);
+    // }
+
+    // // Abandon ship
+    // if(!$event) {
+    //   abort(404);
+    // }
+
+    $events_json = json_decode(file_get_contents('events.json'), 1);
+
+    Eloquent::unguard();
+    $events = new Collection;
+    foreach ($events_json as $key => $events_json) {
+      $event = new Event($events_json);
+      $events->push($event);
     }
-
-    // Abandon ship
+    Eloquent::reguard();
+    // try by id
+    $event = $events->filter(function($value) use($id) {
+      return $value->id == $id;
+    })->first();
+    // else by slug
+    if(!$event) {
+      $event = $events->filter(function($value) use($id) {
+        return $value->slug == $id;
+      })->first();
+    }
+    // else fuck urself
     if(!$event) {
       abort(404);
     }

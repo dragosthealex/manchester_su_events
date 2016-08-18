@@ -387,6 +387,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
     ]);
+
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "20:00",
@@ -394,7 +395,51 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Pangaea",
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
+      "featured"          =>  1,
+      "price"             =>  "Wristband",
+      "cover"             =>  "pangea.jpg",
+      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083"
     ]);
+
+    factory(App\Event::class, 'welcome_week')->create([
+      "date_start"        =>  "2016-09-22",
+      "time_start"        =>  "20:00",
+      "time_end"          =>  "5:00",
+      "title"             =>  "Wristband Event 2",
+      "location_name"     =>  "Manchester Academy / Albert Hall",
+      "location_address"  =>  "Students' Union",
+      "featured"          =>  1,
+      "price"             =>  "Wristband",
+      "cover"             =>  "wristband1.jpg",
+      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083"
+    ]);
+
+    factory(App\Event::class, 'welcome_week')->create([
+      "date_start"        =>  "2016-09-20",
+      "time_start"        =>  "20:00",
+      "time_end"          =>  "5:00",
+      "title"             =>  "Wristband Event 3",
+      "location_name"     =>  "Manchester Academy / Albert Hall",
+      "location_address"  =>  "Students' Union",
+      "featured"          =>  1,
+      "price"             =>  "Wristband",
+      "cover"             =>  "wristband2.jpg",
+      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083"
+    ]);
+
+    factory(App\Event::class, 'welcome_week')->create([
+      "date_start"        =>  "2016-09-18",
+      "time_start"        =>  "20:00",
+      "time_end"          =>  "5:00",
+      "title"             =>  "Wristband Event 4",
+      "location_name"     =>  "Deansgate Locks",
+      "location_address"  =>  "Deansgate Locks",
+      "featured"          =>  1,
+      "price"             =>  "Wristband",
+      "cover"             =>  "wristband3.jpg",
+      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083"
+    ]);
+
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-24",
       "time_start"        =>  "18:00",

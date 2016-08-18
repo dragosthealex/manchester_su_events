@@ -1,24 +1,29 @@
-/* fonts */
 @font-face {
-  font-family: 'outrun_future';
-  src: url('../fonts/future-webfont.woff2') format('woff2'),
-       url('../fonts/future-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: 'gotham';
+  src: url('../fonts/gotham.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: 'snack_patrol';
-  src: url('../fonts/snack_patrol.woff2') format('woff2'),
-       url('../fonts/snack_patrol.woff') format('woff');
-  font-weight: normal;
+  font-family: 'solano';
+  src: url('../fonts/SolanoGothicMVB-SbCap.woff') format('woff'),
+    url('../fonts/SolanoGothicMVB-SbCap.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'baumans';
-  src: url('../fonts/baumans-regular-webfont.woff2') format('woff2'),
-       url('../fonts/baumans-regular-webfont.woff') format('woff');
-  font-weight: normal;
+  font-family: 'solano_bold';
+  src: url('../fonts/SolanoGothicMVB-BdCap.woff') format('woff'),
+    url('../fonts/SolanoGothicMVB-BdCap.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
+}
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 /* global stuff */
 html {
@@ -27,6 +32,7 @@ html {
 body {
   color: #333;
   background-color: #efefef;
+  font-family: 'Montserrat',Arial,sans-serif;
 }
 a {
   cursor: pointer;
@@ -52,23 +58,36 @@ a {
 .parallax-window {
   position: absolute;
 }
+.btn, .navbar-custom, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat',Arial,sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 section.content-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+section.content-section:first-child {
   padding-top: 70px;
+}
+section.content-section:last-child {
   padding-bottom: 50px;
 }
 section.content-section:first-child {
   padding-top: 0;
 }
 section.content-section .section-title {
-  font-family: 'snack_patrol';
-  color: rgba(113, 6, 113, 0.8);
+  font-family: 'solano_bold';
+  font-weight: bold;
+  color: rgba(65,83,93,0.8);
   font-size: 70px;
-  letter-spacing: 10px;
+  text-transform: uppercase;
 }
 section.content-section .section-subtitle {
-  font-family: 'baumans';
+  font-family: 'gotham';
   font-size: 30px;
+  font-weight: normal;
 }
 section.content-section .section-text {
   text-align: left;
@@ -103,17 +122,18 @@ section .row.inside-bar {
   text-overflow: ellipsis;
   width: 90%;
   text-align: left;
+  font-size: 24px;
 }
 .card.has-cover .card-title a {
-  font-family: 'baumans';
+  font-family: 'gotham';
   color: rgb(243, 243, 5);
-  text-shadow: 2px 2px 2px #710671;
+  /*text-shadow: 2px 2px 2px #41535D;*/
   text-transform: capitalize;
   text-decoration: none;
 }
 .card.has-cover .card-content .card-body .card-subtitle,
 .event-subtitle {
-  font-family: 'baumans';
+  font-family: 'gotham';
   text-align: center;
   color: green;
   font-size: 25px;
@@ -132,12 +152,17 @@ section .row.inside-bar {
   text-align: left;
   font-size: 15px;
   color: #555;
+  display: none;
+}
+.card .card-content .card-body .card-time  {
+  text-align: center;
 }
 .card .card-content .card-body .card-details,
 .event-details {
   text-align: left;
   color: #515151;
   margin-bottom: 0;
+  min-height: 64px;
 }
 .card .card-content hr {
   margin: 0;  
@@ -147,7 +172,7 @@ section .row.inside-bar {
 }
 
 .card .card-content .card-footer .card-action {
-  color: #710671;
+  color: #41535D;
   float: left;
   padding: 15px;
   font-size: 20px;
@@ -161,11 +186,11 @@ section .row.inside-bar {
   margin-left: 0;
 }
 .card .card-content .card-footer .card-action:hover {
-  background-color: rgba(113, 6, 113, 0.6);
-  color: rgb(243, 243, 5);
+  background-color: rgba(65,83,93,0.6);
+  color: #fefefe;
 }
 .card .card-content .card-footer .card-action:active {
-  background-color: rgba(113, 6, 113, 0.8);
+  background-color: rgba(65,83,93,0.8);
   color: rgb(243, 243, 5);
 }
 .card.event-card .card-description {
@@ -173,34 +198,39 @@ section .row.inside-bar {
 }
 .page-header h2,
 .page-header h1 {
-  font-family: 'snack_patrol';
   letter-spacing: 3px;
+  margin-left: 16px;
+  text-transform: uppercase;
 }
 .page-header h3 {
-  font-family: 'baumans';
+  font-family: 'solano_bold';
+  margin-left: 16px;
 }
 /* /content */
 
 /* misc */
 .carousel-indicators li {
-  border-color: #710671;
+  border-color: #41535D;
 }
 .carousel-indicators li.active {
-  background-color: rgb(243, 243, 5);
+  background-color: #41535D;
 }
 a.link-dark {
-  color: #710671;
+  color: #41535D;
   cursor: pointer;
 }
 a.link-dark:hover {
-  color: rgba(113, 6, 113, 0.8);
+  color: rgba(65,83,93,0.8);
 }
 .word-separator {
   margin-bottom: 20px;
   font-size: 20px;
   color: #555;
   text-align: center;
-  font-family: 'baumans';
+  font-family: 'gotham';
+}
+.text-primary {
+  color: #41535D;
 }
 /* /misc */
 
@@ -210,23 +240,30 @@ a.link-dark:hover {
   margin-bottom: 5px;
 }
 .btn-primary {
-  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
-  color: rgb(243, 243, 5);
+  background-image: linear-gradient(rgba(65,83,93,0.6),rgba(65,83,93,0.8) 6%,#41535D);
+  /*color: rgb(243, 243, 5);*/
   background-color: rgba(113, 6, 113, 0.3);
+  border: 1px solid #000;
+  font-family: 'gotham';
+  font-size: 13.5px;
+  text-transform: uppercase;
 }
 .btn-primary:hover {
-  background-color: rgba(113, 6, 113, 0.8);
-  background-image: linear-gradient(rgba(113, 6, 113, 0.6),rgba(113, 6, 113, 0.8) 6%,#710671);
-  color: rgb(243, 243, 5);
+  background-color: rgba(65,83,93,0.8);
+  background-image: linear-gradient(rgba(65,83,93,0.6),rgba(65,83,93,0.8) 6%,#41535D);
+  /*color: rgb(243, 243, 5);*/
+  border: 1px solid #35454e;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-image: linear-gradient(rgba(113, 6, 113, 0.8),rgba(113, 6, 113, 0.9) 6%,#710671);
-  background-color: rgba(113, 6, 113, 0.8);
+  background-image: linear-gradient(#35454e,#35454e 6%,#41535D);
+  background-color: rgba(65,83,93,0.8);
+  border: 1px solid #35454e;
 }
 .btn-primary.active:hover,
-.btn-primary:active:hover {
-  background-color: rgba(113, 6, 113, 1);
+.btn-primary:active:hover,
+.btn-primary.focus, .btn-primary:focus {
+  background-color: #35454e;
 }
 .btn-social {
   padding: 5px 10px;
@@ -304,14 +341,17 @@ a.link-dark:hover {
 
 
 .navbar-custom {
-  background-color: #710671;
+  background-color: #41535D;
   padding: 0;
 }
 .navbar-custom ul.nav li a {
   padding: 21px 25px;
 }
+.navbar-custom ul.nav > li > a {
+  font-size: 18px;
+}
 .navbar-custom.top-nav-collapse {
-  background-color: #710671;
+  background-color: #41535D;
   height: 50px;
   box-shadow: 0 2px 6px 1px rgba(0,0,0,0.4);
   border: none;
@@ -325,6 +365,7 @@ a.link-dark:hover {
   padding-top: 16px;
   padding-bottom: 16px;
 }
+.navbar-nav>li>.dropdown-menu > li > a:hover,
 .navbar-custom.top-nav-collapse .nav li a:hover {
   color: #ffff86;
 }
@@ -354,15 +395,17 @@ a.link-dark:hover {
 }
 .navbar-nav>li>.dropdown-menu > li > a {
   padding: 5px 10px;
+  color: #fefefe;
 }
-.navbar-custom.top-nav-collapse .nav li a:hover {
+.navbar-custom.top-nav-collapse .nav li a:hover,
+.navbar-nav>li>.dropdown-menu > li > a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 /* /nav */
 
 /* footer */
 #footer {
-  background-color: #710671;
+  background-color: #41535D;
   padding: 20px 0;
   color: #fefefe;
 }
@@ -379,6 +422,96 @@ a.link-dark:hover {
 
 /* /footer */
 
+/* events */
+#events .event-wrapper {
+  margin-bottom: 6px;
+}
+#events .event-wrapper .card {
+  height: 300px;
+}
+#events .event-wrapper .card .card-body {
+  height: 240px;
+}
+#events .event-wrapper .card .card-body .card-title {
+  position: static;
+  margin-bottom: 5px;
+  margin-top: 0;
+  white-space: normal;
+}
+#events .event-wrapper .card .card-body .card-title a {
+  color: #333;
+  /*text-shadow: 1px 1px 1px rgb(243, 243, 5);*/
+}
+#events .event-wrapper .card .card-body .card-date {
+  margin-bottom: 5px;
+}
+#events .event-wrapper .card .card-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: 0,0;
+  background-size: cover;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: inset 0 -50px 200px -50px #000;
+  -moz-box-shadow: inset 0 -50px 200px -50px #000;
+  box-shadow: inset 0 -50px 200px -50px #000;
+}
+#events .event-wrapper .card .card-cover:hover {
+  -webkit-box-shadow: inset 0 -50px 200px -10px #000;
+  -moz-box-shadow: inset 0 -50px 200px -10px #000;
+  box-shadow: inset 0 -50px 200px -10px #000;
+}
+#events .event-wrapper .card .front {
+  z-index: 2!important;
+  display: none;
+}
+#events .event-wrapper .card.flip .front {
+  display: block;
+}
+#events .event-wrapper .card .front .card-title {
+
+}
+#events .event-wrapper .card .front .card-date {
+  bottom: 0;
+  position: absolute;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 16px;
+}#events .event-wrapper .card .front .card-date a {
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+#events .event-wrapper.mix {
+  display: none;
+  padding: 0 1px;
+}
+#events .event-card {
+  background-color: transparent;
+}
+#events .card.event-card .card-description {
+  height: 60px;
+  margin-bottom: 20px;
+}
+#events .event-card .card-content {
+  background-color: #fefefe;
+  border-radius: 5px;
+}
+#events .event-card .card-title {
+  bottom: 0;
+  top: auto;
+  margin-left: 20px;
+}
+#events .event-card .card-details {
+  font-size: 15px;
+  font-weight: bold;
+}
+#events .event-card .card-subtitle {
+  display: none;
+}
+/* /events */
 /* media queries */
 @media(min-width: 768px) {
   section {
@@ -394,7 +527,7 @@ a.link-dark:hover {
 
 @media(max-width: 768px) {
   .navbar-custom {
-    background: #710671;
+    background: #41535D;
     padding: 0;
   }
   .navbar-custom,
@@ -427,6 +560,34 @@ a.link-dark:hover {
   }
   #footer > .container > .row > .col-sm-6 {
     text-align: center;
+  }
+  #events {
+    min-height: 300px;
+  }
+  #events .event-wrapper .card,
+  #events .card.event-card .card-body {
+    height: auto;
+  }
+  #events .card.event-card .card-description {
+    display: none;
+  }
+  #events .card .card-content .card-body .card-date, .event-date a {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  #events .card.flip .front {
+    display: none!important;
+  }
+  #events .card.flip .back {
+    transform: none!important; 
+    z-index: auto!important; 
+    backface-visibility: visible!important; 
+    transform-style: none!important; 
+    position: static!important; 
+    height: auto!important; 
+    width: auto!important; 
+    transition: none!important;
+    display: block!important; 
   }
 }
 @media(min-width: 1500px) {

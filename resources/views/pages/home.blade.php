@@ -10,6 +10,10 @@
 header.intro {
   height: 100%;
 }
+section.home-section {
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
 .navbar-custom {
   background-color: transparent; 
   padding: 20px 0; 
@@ -28,114 +32,54 @@ header.intro {
   width: 100%;
 }
 .intro .intro-body .brand-heading {
-  color: rgb(243, 243, 5);
+  /*color: rgb(243, 243, 5);*/
   font-size: 100px;
-  text-shadow: 0 5px 10px #710671;
-  font-family: outrun_future;
+  /*text-shadow: 0 5px 10px #41535D;*/
+  font-family: 'gotham';
   margin-bottom: 60px;
   transition: 0.6s;
+  color: #fefefe;
+  text-transform: uppercase;
+  text-shadow: 0 0 50px #000;
 }
 .intro .intro-body .intro-text {
-  /*font-family: 'baumans';*/
-  /*color: #ffff86;*/
-  font-family: 'snack_patrol';
-  color: #e6e68a;
-  letter-spacing: 4px;
+  /*color: #e6e68a;*/
+  color: #fefefe;
   font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'gotham';
+  text-shadow: 0 0 40px #000;
 }
 .featured-carousel .carousel-indicators {
   bottom: -50px;
 }
-#events .event-wrapper {
-  margin-bottom: 6px;
+section.content-section .section-text.text-featured {
+  text-align: center;
+  font-size: 23px;
 }
-#events .event-wrapper .card {
-  height: 300px;
+#featured-wide {
+  min-height: auto;
 }
-#events .event-wrapper .card .card-body {
-  height: 240px;
+#featured-slider {
+  width: 100%;
 }
-#events .event-wrapper .card .card-body .card-title {
-  position: static;
-  margin-bottom: 5px;
-  margin-top: 0;
-  white-space: normal;
-}
-#events .event-wrapper .card .card-body .card-title a {
-  color: #333;
-  text-shadow: 1px 1px 1px rgb(243, 243, 5);
-}
-#events .event-wrapper .card .card-body .card-date {
-  margin-bottom: 5px;
-}
-#events .event-wrapper .card .card-cover {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-origin: 0,0;
-  background-size: cover;
-  height: 100%;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+.card-cover-div {
   -webkit-box-shadow: inset 0 -50px 200px -50px #000;
   -moz-box-shadow: inset 0 -50px 200px -50px #000;
   box-shadow: inset 0 -50px 200px -50px #000;
-}
-#events .event-wrapper .card .card-cover:hover {
-  -webkit-box-shadow: inset 0 -50px 200px -10px #000;
-  -moz-box-shadow: inset 0 -50px 200px -10px #000;
-  box-shadow: inset 0 -50px 200px -10px #000;
-}
-#events .event-wrapper .card .front {
-  z-index: 2!important;
-  display: none;
-}
-#events .event-wrapper .card.flip .front {
-  display: block;
-}
-#events .event-wrapper .card .front .card-title {
-
-}
-#events .event-wrapper .card .front .card-date {
-  bottom: 0;
-  position: absolute;
-  font-size: 16px;
-  margin-bottom: 10px;
-  margin-left: 16px;
-}#events .event-wrapper .card .front .card-date a {
-  color: #fff;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-#events .event-wrapper.mix {
-  display: none;
-  padding: 0 1px;
-}
-#events .event-card {
-  background-color: transparent;
-}
-#events .card.event-card .card-description {
-  height: 60px;
-  margin-bottom: 20px;
-}
-#events .event-card .card-content {
-  background-color: #fefefe;
-}
-#events .event-card .card-title {
-  bottom: 0;
-  top: auto;
-  margin-left: 20px;
-}
-#events .event-card .card-details {
-  font-size: 15px;
-  font-weight: bold;
-}
-#events .event-card .card-subtitle {
-  display: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-origin: 0;
+  height: 300px;
+  width: 100%;
 }
 @media(max-width: 768px) {
   .intro .intro-body .brand-heading {
     font-size: 3pc;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 25px;
   }
   .navbar-custom {
     background: transparent;
@@ -162,7 +106,7 @@ header.intro {
             <br>Welcome Week 2016
             <br>#MADEITTOMCR
           </p>
-          <a href="#featured" class="btn btn-circle page-scroll">
+          <a href="#featured-wide" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
           </a>
         </div>
@@ -170,18 +114,28 @@ header.intro {
     </div>
   </div>
 </header>
+<section id="featured-wide" class="container-fluid text-center scrollable-section">
+  <div class="row">
+    <a target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083" title="Buy the Welcome Week Wristband now!">
+      <img class="img-responsive" src="{{ asset('img/bg/wristband_slider.jpg') }}" id="featured-slider">
+    </a>
+  </div>
+</section>
 <!-- Featured Events Section -->
-<section id="featured" class="container-fluid content-section text-center scrollable-section">
+<section id="featured" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">Wristbands</h1>
       <p class="section-subtitle">
         Congratulations! You’ve made it to Manchester!
       <p>
-      <p class="section-text">
+      <p class="section-text text-center">
         Explore Manchester and start making new friends with an Official Welcome
         Week wristband. For only £55 (inc. booking fee) you will gain entry into all of
-        the events below.
+        the events below.<br>
+        <div class="text-center">
+          <a class="btn btn-primary" target="_blank" href="https://www.ticketline.co.uk/order/tickets/13319083">Buy Welcome Week Wristband</a>
+        </div>
       </p>
     </div>
   </div>
@@ -198,8 +152,9 @@ header.intro {
     </div>
   </div>
 </section>
+
 <!-- All Events Section -->
-<section id="events" class="container-fluid content-section text-center scrollable-section">
+<section id="events" class="container-fluid home-section content-section text-center scrollable-section">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1 class="section-title">All Events</h1>
@@ -207,10 +162,14 @@ header.intro {
   </div>
   <div class="row inside-bar">
     <div class="col-xs-12">
-      <a class="btn btn-primary filter" data-filter="all">Show All</a>
-      @foreach(App\Category::all() as $category)
-        <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
-      @endforeach
+      @if(false)
+        @if(count($categories = App\Category::all()))
+          <a class="btn btn-primary filter" data-filter="all">Show All</a>
+          @foreach($categories as $category)
+            <a class="btn btn-primary filter" data-filter=".category-<?=$category->id?>"><?=$category->name?></a>
+          @endforeach
+        @endif
+      @endif
       <div style="display:inline-block;margin-left:20px;">
         <a class="btn btn-primary sort" data-sort="date:asc">Sort by Date</a>
         <a class="btn btn-primary sort" data-sort="title:asc">Sort by Name</a>
@@ -221,37 +180,42 @@ header.intro {
   <div class="row">
     <div class="span-12 events-container">
       @foreach($events as $event)
-        <div class="col-xl-2 col-lg-3 col-sm-4 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short <?=$event->category ? 'category-' . $event->category->id : 'category-null'?>"
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 event-wrapper mix featured-<?=$event->featured?'yes':'no'?> short @if(false)<?=$event->category ? 'category-' . $event->category->id : 'category-null'?>@endif"
              data-date="<?=strtotime($event->date_start . ' ' . $event->time_start)?>" 
              data-title="<?=$event->title?>">
-          <div class="card has-cover event-card <?=$event->getOriginal('cover')?'flip':''?>">
+          <div class="card has-cover event-card <?=$event->cover?'flip':''?>">
+            @if($event->cover)
             <div class="front">
-              <div class="card-cover" style="background-image:url('<?=$event->cover?>');"></div>
-              <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+              <div class="card-cover" style="background-image:url('{{ asset('img/'.$event->cover) }}');"></div>
+              @if(false)
+              <h2 class="card-title"><a href="{{ url('events/' . $event->slug) }}"><?=$event->title?></a></h2>
+              @endif
               <h2 class="card-date"><a href="#"><?=date('l, j F Y', strtotime($event->date_start))?></a></h2>
             </div>
+            @endif
             <div class="back">
               <div class="card-content">
                 <div class="card-body">
-                  <h2 class="card-title"><a href="#"><?=$event->title?></a></h2>
+                  <h2 class="card-title"><a href="{{ url('events/' . $event->slug) }}"><?=$event->title?></a></h2>
                   <h4 class="card-date"><?=date('l, j F Y', strtotime($event->date_start))?></h4>
+                  <h4 class="card-time"><?=$event->time_start?> - <?=$event->time_end?></h4>
                   <p class="card-description">
                     @if(strlen($event->description) > 100)
-                      <?=substr($event->description, 0, 100)?>... <a href="{{ url('events/' . $event->id) }}">More</a>
+                      <?=substr($event->description, 0, 100)?>... <a href="{{ url('events/' . $event->slug) }}">More</a>
                     @else
                       <?=$event->description?>
                     @endif
                   </p>
                   <p class="card-details">
-                    <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+                    <?=$event->price?>, <?=$event->location_name?>
                   </p>
                 </div>
                 <hr>
                 <div class="card-footer">
-                  @if($event->getOriginal('price'))
-                    <a class="card-action" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+                  @if($event->getOriginal('price') || $event->price != 'Free')
+                    <a class="card-action" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
-                  <a class="card-action" target="_blank" href="http://maps.google.com/?q=<?=($event->location_address?$event->location_address:$event->location_name).' Manchester, UK'?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  <a class="card-action" target="_blank" href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -272,13 +236,11 @@ $(document).ready(function() {
       slides: [
           { src: "{{ asset('img/bg/home1.jpg') }}" },
           { src: "{{ asset('img/bg/home2.jpg') }}" },
-          { src: "{{ asset('img/bg/home3.jpg') }}" },
-          { src: "{{ asset('img/bg/home4.jpg') }}" },
-          { src: "{{ asset('img/bg/home5.jpg') }}" }
+          { src: "{{ asset('img/bg/home3.jpg') }}" }
       ],
       overlay: "{{ asset('lib/vegas/overlays/02.png') }}"
     });
-    // Fix firefox shit
+    // Fix issues with Firefox.
     if($(window).width() > 768) {
       $("header.intro .vegas-wrapper").attr("style", "height:" + $("header.intro").height() + "px!important;");
     }
