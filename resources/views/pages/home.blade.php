@@ -34,7 +34,7 @@ section.home-section {
 .intro .intro-body .brand-heading {
   /*color: rgb(243, 243, 5);*/
   font-size: 100px;
-  /*text-shadow: 0 5px 10px #710671;*/
+  /*text-shadow: 0 5px 10px #41535D;*/
   font-family: 'gotham';
   margin-bottom: 60px;
   transition: 0.6s;

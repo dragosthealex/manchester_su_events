@@ -13,7 +13,7 @@
         <p class="copyright">@<?=date('Y')?> University of Manchester Students’ Union. All rights reserved.</p>
       </div>
       <div class="col-sm-6 text-right">
-        <p><img alt="SU Logo" class="img-responsive su-logo" src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/63366/optimized/microsite-white-logo.png"></p>
+        <p><a href="http://manchesterstudentsunion.com/"><img alt="SU Logo" class="img-responsive su-logo" src="https://s3-eu-west-1.amazonaws.com/nusdigital/image/images/63366/optimized/microsite-white-logo.png"></a></p>
       </div>
     </div>
   </div>

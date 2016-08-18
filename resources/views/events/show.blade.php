@@ -2,6 +2,12 @@
 
 @section('title') <?=$event->title?> :: @parent @endsection
 
+@section('meta')
+<meta property="og:title"              content="<?=$event->title?> :: Manchester Students' Union Events">
+<meta property="og:description"        content="<?=$event->description?>">
+<meta property="og:image"              content="{{ $event->cover?$event->cover:asset('img/logo.jpg') }}">
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css') }}">
@@ -97,7 +103,7 @@
         </p>
         <p class="text-center">
           @if($event->getOriginal('price') || $event->price != "Free")
-          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
+          <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
           <a target="_blank" class="btn btn-primary"  href="http://www.google.com/maps/place/<?=$event->lat?>,<?=$event->lng?>">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>

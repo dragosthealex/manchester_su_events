@@ -5,7 +5,7 @@
         Menu <i class="fa fa-bars"></i>
       </button>
       <a class="navbar-brand page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#page-top">
-        <img class="img-responsive" src="{{ asset('img/logo.png') }}">
+        <img class="img-responsive" src="{{ asset('img/logo.jpg') }}">
       </a>
     </div>
 
@@ -21,6 +21,9 @@
         </li>
         <li>
           <a class="page-scroll" href="{{ Request::url() == url('/') ? '' : url('/').'/' }}#events">Events</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="http://manchesterstudentsunion.com/top-navigation/welcome-week-2016/welcome-week-faqs">FAQ</a>
         </li>
         @if(false)
         @if (Auth::guest())
