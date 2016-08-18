@@ -100,10 +100,8 @@ class Event extends Model
         if(!$value) {
             return "";
         }
-        if(count(explode("covers/", $value))>1) {
-            return $value;
-        }
-        return "covers/" . $value;        
+
+        return $value;        
     }
 
     /**
