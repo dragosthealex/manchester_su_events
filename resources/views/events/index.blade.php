@@ -208,7 +208,7 @@ a.days-scroll:hover {
                   @if($event->getOriginal('price') || $event->price != "Free")
                     <a class="card-action" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
                   @endif
-                  <a class="card-action" target="_blank" href=""{{ url('events/' . $event->slug) }}"">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
+                  <a class="card-action" target="_blank" href="{{ url('events/' . $event->slug) }}">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
