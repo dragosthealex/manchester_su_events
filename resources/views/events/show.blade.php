@@ -105,7 +105,6 @@
           @if($event->getOriginal('price') || $event->price != "Free")
           <a target="_blank" class="btn btn-primary" href="<?=$event->tickets_link?>">Wristband&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></a>
           @endif
-          <a target="_blank" class="btn btn-primary"  href="{{ url('events/' . $event->slug) }}">Directions&nbsp;<i class="fa fa-location-arrow" aria-hidden="true"></i></a>
         </p>
       </div>
     </div>
