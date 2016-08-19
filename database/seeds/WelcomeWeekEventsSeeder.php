@@ -444,21 +444,22 @@ class WelcomeWeekEventsSeeder extends Seeder
       "featured"          =>  1,
       "price"             =>  "Wristband",
       "cover"             =>  "PanSep16.WristbandAd.1600x900-01.jpg",
-      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083"
+      "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083",
+      "description"       =>  "Pangaea Festival returns this September! Join over 6,000 fellow students Down the Rabbit Hole, as we unlock a world of fantasy, puzzle and splendid mystery. Prepare yourself for the descent downwards into the parallel universe of Pangaea, dress for the occasion and you’ll never want to leave this wonderland. http://pangaeafestival.co.uk/"
     ]);
 
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-22",
       "time_start"        =>  "20:00",
       "time_end"          =>  "5:00",
-      "title"             =>  "Wristband Event 2",
+      "title"             =>  "Manchester Academy / Albert Hall",
       "location_name"     =>  "Manchester Academy / Albert Hall",
       "location_address"  =>  "Manchester Academy",
       "featured"          =>  1,
       "price"             =>  "Wristband",
       "cover"             =>  "Albert.hall.1600x900.jpg",
       "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083",
-      "description"       =>  "Grey wristbands will be attending Manchester Academy / Cream wristbands will be attending Albert Hall. Events as above."
+      "description"       =>  "Grey wristbands will be attending Manchester Academy: Carnival Magnifico presents Tough Love. Cream wristbands will be attending The Albert Hall: Bipolar Sunshine at The Albert Hall with Juicy / Gold Teeth / Murkage DJs"
     ]);
 
     factory(App\Event::class, 'welcome_week')->create([
@@ -472,28 +473,21 @@ class WelcomeWeekEventsSeeder extends Seeder
       "price"             =>  "Wristband",
       "cover"             =>  "Carnival Magnifico16x9-01.jpg",
       "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083",
-      "description"       =>  "Cream wristbands will be attending Manchester Academy:<br>
-                              Carnival Magnifico presents Tough Love<br>
-                              Grey wristbands will be attending The Albert Hall:<br>
-                              Bipolar Sunshine at The Albert Hall with Juicy / Gold Teeth / Murkage DJs"
+      "description"       =>  "Cream wristbands will be attending Manchester Academy: Carnival Magnifico presents Tough Love. Grey wristbands will be attending The Albert Hall: Bipolar Sunshine at The Albert Hall with Juicy / Gold Teeth / Murkage DJs"
     ]);
 
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-18",
       "time_start"        =>  "20:00",
       "time_end"          =>  "5:00",
-      "title"             =>  "Wristband Event 4",
+      "title"             =>  "Deansgate Locks",
       "location_name"     =>  "Deansgate Locks",
       "location_address"  =>  "Deansgate Locks",
       "featured"          =>  1,
       "price"             =>  "Wristband",
       "cover"             =>  "wristband3.jpg",
       "tickets_link"      =>  "https://www.ticketline.co.uk/order/tickets/13319083",
-      "description"       =>  "Comedy Store - Hosted by Pop Bubble Rock<br>
-                              Ark – Hosted by Brooks<br>
-                              Revolution – Hosted by Propbox and Covert<br>
-                              Lola Lo – Hosted by Cherry<br>
-                              Bar Baa – Hosted by Remake Remodel"
+      "description"       =>  "Comedy Store, hosted by Pop Bubble Rock — Ark, hosted by Brooks — Revolution, hosted by Propbox and Covert — Lola Lo, hosted by Cherry — Bar Bah, hosted by Remake Remodel."
     ]);
 
     factory(App\Event::class, 'welcome_week')->create([
