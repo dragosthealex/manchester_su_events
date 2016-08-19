@@ -45,6 +45,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Activities at The Union",
       "location_name"     =>  "Academy 2, Students' Union",
       "location_address"  =>  "Manchester Academy",
+      "cover"             =>  "Union.Activities.1600x900.jpg"
     ]);
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-16",
@@ -188,6 +189,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Welcome Fair",
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
+      "cover"             =>  "Welcome.Fair.1600x900.jpg"
     ]);
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-20",
@@ -241,6 +243,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Welcome Fair",
       "location_name"     =>  "Students' Union",
       "location_address"  =>  "Students' Union",
+      "cover"             =>  "Welcome.Fair.1600x900.jpg"
     ]);
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-21",
@@ -392,6 +395,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Grub Club",
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
+      "cover"             =>  "Grub.Club.1600x900.jpg"
     ]);
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
@@ -400,6 +404,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "Grub Club",
       "location_name"     =>  "Marquee next to Students' Union",
       "location_address"  =>  "Students' Union",
+      "cover"             =>  "Grub.Club.1600x900.jpg"
     ]);
     factory(App\Event::class, 'welcome_week')->create([
       "date_start"        =>  "2016-09-23",
@@ -426,6 +431,7 @@ class WelcomeWeekEventsSeeder extends Seeder
       "title"             =>  "The Union Bar Weekend Warm Up",
       "location_name"     =>  "Union Bar, Students' Union",
       "location_address"  =>  "Students' Union",
+      "cover"             =>  "Union.Bar.1600x900.jpg"
     ]);
 
     factory(App\Event::class, 'welcome_week')->create([
