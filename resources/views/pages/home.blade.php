@@ -207,7 +207,7 @@ section.content-section .section-text.text-featured {
                     @endif
                   </p>
                   <p class="card-details">
-                    <?=$event->price?>, <?=$event->location_name?>
+                    @if(false)<?=$event->price?>, @endif<?=$event->location_name?>
                   </p>
                 </div>
                 <hr>

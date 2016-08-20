@@ -200,7 +200,7 @@ a.days-scroll:hover {
                     @endif
                   </p>
                   <p class="card-details">
-                    <?=$event->time_start?> - <?=$event->time_end?>, <?=$event->price?>, <?=$event->location_name?>
+                    <?=$event->time_start?> - <?=$event->time_end?>, @if(false)<?=$event->price?>, @endif<?=$event->location_name?>
                   </p>
                 </div>
                 <hr>
