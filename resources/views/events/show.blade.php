@@ -99,7 +99,7 @@
           <?=$event->description?>
         </p>
         <p class="event-details">
-          <?=$event->price?>, <?=$event->location_name?>
+          <?=$event->location_name?>
         </p>
         @if(false)
         <p class="text-center">
