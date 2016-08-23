@@ -5,7 +5,9 @@
 @section('meta')
 <meta property="og:title"              content="<?=$event->title?> :: Manchester Students' Union Events">
 <meta property="og:description"        content="<?=$event->description?>">
+<meta property="og:type"               content="website">
 <meta property="og:image"              content="{{ $event->cover?$event->cover:asset('img/logo.jpg') }}">
+
 @endsection
 
 @section('styles')

@@ -105,7 +105,17 @@
 </div>
 
 <!-- carousel for extra-small devices -->
-<div id="featured-carousel-xs" class="featured-carousel carousel slide visible-xs"> 
+<div id="featured-carousel-xs" class="featured-carousel carousel slide visible-xs">
+  @if(count($featured_events)>1)
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+      <li data-target="#featured-carousel-xs" data-slide-to="0" class="active"></li>
+    @for($i=1; $i<=count($featured_events)-1; $i++)
+      <li data-target="#featured-carousel-xs" data-slide-to="<?=$i?>"></li>
+    @endfor
+  </ol>
+  @endif
+
   <!-- Wrapper for slides -->
   <div class="carousel-inner"> 
     <!-- Slide -->

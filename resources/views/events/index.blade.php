@@ -6,6 +6,7 @@
 <meta property="og:title"              content="Calendar :: Manchester Students' Union Events">
 <meta property="og:description"        content="">
 <meta property="og:image"              content="{{ asset('img/logo.jpg') }}">
+<meta property="og:type"               content="website">
 @endsection
 
 @section('styles')
