@@ -14,6 +14,8 @@
         <meta property="og:image"              content="{{ asset('img/logo.jpg') }}">
         <meta property="og:type"               content="website">
 
+        <link rel="icon" href="{{ asset('img/icon.jpg') }}">
+
         <link href="{{ asset('lib/jquery-mobile/css/jquery.mobile.custom.structure.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <link href="{{ asset('css/grayscale.min.css') }}" rel="stylesheet">
