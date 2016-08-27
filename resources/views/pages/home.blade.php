@@ -142,6 +142,8 @@ section.content-section .section-text.text-featured {
   <div class="row">
     <div class="col-xs-12">
       <?php $featured_events = $events->filter(function($event){return $event->featured; }); ?>
+      <?php $featured_events = $featured_events->sortBy(function($event){return strtotime($event->date_start . ' ' . $event->time_start);}); ?>
+
       @if(count($featured_events))
         @include('partials.featured_carousel', ['featured_events'=>$featured_events])
       @else
