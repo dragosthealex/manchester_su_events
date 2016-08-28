@@ -55,16 +55,6 @@ class Event extends Model
     }
 
     /**
-     * Get the cover of this event
-     *
-     * @return Eloquent\Relationship
-     */
-    public function cover() {
-
-        return $this->hasOne('App\Photo', 'event_cover');
-    }
-
-    /**
      * Get the category of this event
      *
      * @return Eloquent\Relationship

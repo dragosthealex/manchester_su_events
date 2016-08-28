@@ -21,8 +21,8 @@ class AddForeignKeys extends Migration
         });
         Schema::table('events', function(Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('event_categories')->onDelete('set null');
-            $table->foreign('event_cover')->references('id')->on('photos')->onDelete('set null');
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('set null');
+            $table->string('cover', 200)->nullable()->default(null);
         });
     }
 
@@ -42,8 +42,8 @@ class AddForeignKeys extends Migration
         });
         Schema::table('events', function(Blueprint $table) {
             $table->dropForeign(['category_id']);
-            $table->dropForeign(['event_cover']);
             $table->dropForeign(['creator_id']);
+            $table->dropColumn('cover');
         });
     }
 }
